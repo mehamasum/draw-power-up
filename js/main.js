@@ -117,8 +117,9 @@ var boardButtonCallback = function (t) {
         ]
     });*/
 
-    return t.overlay({
-        url: './war/index.html'
+    return t.boardBar({
+        url: './war/index.html',
+        height:200
     })
 
 };
