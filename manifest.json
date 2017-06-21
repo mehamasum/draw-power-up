@@ -1,0 +1,31 @@
+{
+  "name": "Draw for Trello",
+  "description": "",
+  "details": "Drawing Power Up to boost your Trello experience",
+  "icon": {
+    "url": "./war/images/logo.png"
+  },
+  "author": "Meha Masum",
+  "capabilities": [
+    "attachment-sections",
+    "attachment-thumbnail",
+    "board-buttons",
+    "callback",
+    "card-badges",
+    "card-buttons",
+    "card-detail-badges",
+    "card-from-url",
+    "format-url",
+    "show-settings",
+    "authorization-status",
+    "show-authorization"
+  ],
+  "connectors": {
+    "iframe": {
+      "url": "./index.html"
+    }
+  },
+  "recommend": {
+    "urls": []
+  }
+}
