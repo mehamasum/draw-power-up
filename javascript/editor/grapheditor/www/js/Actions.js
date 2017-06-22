@@ -81,7 +81,7 @@ Actions.prototype.init = function()
 	this.addAction('print...', function() { ui.showDialog(new PrintDialog(ui).container, 300, 180, true, true); }, null, 'sprite-print', 'Ctrl+P');
 	this.addAction('preview', function() { mxUtils.show(graph, null, 10, 10); });
 	this.addAction('close', function () {
-        console.log("close worked");
+        console.log("close from editor-iframe");
         window.parent.closeOverlay(null);
 	}, true, null);
 
