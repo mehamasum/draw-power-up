@@ -229,7 +229,7 @@ TrelloPowerUp.initialize({
 
     'attachment-sections': function (t, options) {
 
-        console.log(JSON.stringify(options));
+        //console.log(JSON.stringify(options));
 
 
         // options.entries is a list of the attachments for this card
@@ -250,7 +250,7 @@ TrelloPowerUp.initialize({
             // that returns the section title. If you do so, provide a unique id for
             // your section
 
-            console.log(JSON.stringify(claimed));
+            //console.log(JSON.stringify(claimed));
 
 
             return [{

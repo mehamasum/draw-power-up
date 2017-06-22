@@ -46,13 +46,14 @@
        */
 
       var size = list.length;
-      var section = $("#attached-list");
+      var htmlList = "";
       for(var i=0; i<size; i++) {
-        section.innerHTML += "<div>" +
+        htmlList += "<div>" +
                 "<p>"+list[i]['name']+"</p>" +
                 "<button onclick='openDrawing("+list[i]['url']+" , "+list[i]['name']+")'>"+"Open"+"</button>"+
                 "</div>"
       }
+      $("#attached-list").html(htmlList);
 
       function openDrawing(url, name) {
          console.log("openDrawing: "+ url +" , "+ name);
