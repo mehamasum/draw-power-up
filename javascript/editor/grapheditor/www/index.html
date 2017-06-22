@@ -40,13 +40,22 @@
 
 	window.attachLink = function (arg) {
 
-		console.log("attach from index");
-		var url = "www.drawintrello.com?xml="+arg.xml+"&filename="+arg.name;
+		const canEdit = t.args[0].context.permissions.board === 'write';
 
-		t.attach({url: url, name: arg.name})
-				.then(function () {
-					t.closeOverlay().done();
-				})
+		if(canEdit) {
+			console.log("attach from index");
+			var url = "www.drawintrello.com?xml="+arg.xml+"&filename="+arg.name;
+
+			t.attach({url: url, name: arg.name})
+					.then(function () {
+						t.closeOverlay().done();
+					})
+		}
+		else {
+			t.closeOverlay().done();
+		}
+
+
 	}
 </script>
 
