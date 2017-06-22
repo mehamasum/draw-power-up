@@ -30,5 +30,12 @@
 	<p>Your browser does not support iframes.</p>
 </iframe>
 
+<script>
+	window.closeOverlay = function (args) {
+		var t = TrelloPowerUp.iframe();
+		t.closeOverlay().done();
+	}
+</script>
+
 </body>
 </html>

@@ -82,8 +82,7 @@ Actions.prototype.init = function()
 	this.addAction('preview', function() { mxUtils.show(graph, null, 10, 10); });
 	this.addAction('close', function () {
         console.log("close worked");
-        var t = TrelloPowerUp.iframe();
-        t.closeOverlay().done();
+        window.parent.closeOverlay(null);
 	}, true, null);
 
 	// Edit actions
