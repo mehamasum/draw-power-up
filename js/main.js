@@ -222,7 +222,7 @@ TrelloPowerUp.initialize({
     'card-buttons': function (t, options) {
         return [{
             icon: GRAY_ICON,
-            text: 'Office 365',
+            text: 'Attach Drawing',
             callback: cardButtonCallback
         }];
     },
@@ -260,7 +260,7 @@ TrelloPowerUp.initialize({
                 title: 'Attached Drawings',
                 content: {
                     type: 'iframe',
-                    url: t.signUrl('./section.html', {arg: 'you can pass your section args here'}),
+                    url: t.signUrl('./section.html', {arg: claimed}),
                     height: 230
                 }
             }];
