@@ -48,9 +48,11 @@
       var size = list.length;
       var htmlList = "";
       for(var i=0; i<size; i++) {
+        var itemUrl = list[i]['url'];
+        var itemName = list[i]['name'];
         htmlList += "<div>" +
-                "<p>"+list[i]['name']+"</p>" +
-                "<button onclick=\"openDrawing(list[i]['url'], list[i]['name'])\"> Open </button>"+
+                "<p>"+itemName+"</p>" +
+                "<button onclick='openDrawing(itemUrl, itemName)'> Open </button>"+
                 "</div>"
       }
       $("#attached-list").html(htmlList);
