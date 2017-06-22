@@ -129,7 +129,7 @@ var boardButtonCallback = function (t) {
 };
 
 var cardButtonCallback = function (t) {
-    var items = Object.keys(parkMap).map(function (parkCode) {
+    /*var items = Object.keys(parkMap).map(function (parkCode) {
         var urlForCode = 'http://www.nps.gov/' + parkCode + '/';
         return {
             text: parkMap[parkCode],
@@ -151,7 +151,15 @@ var cardButtonCallback = function (t) {
             placeholder: 'Search National Parks',
             empty: 'No parks found'
         }
-    });
+    });*/
+
+    return t.overlay({
+        url: './javascript/editor/grapheditor/www/index.html',
+        args: {rand: (Math.random() * 100).toFixed(0)}
+    })
+        .then(function () {
+            return t.closePopup();
+        });
 
 };
 
