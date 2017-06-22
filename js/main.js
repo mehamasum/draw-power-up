@@ -118,7 +118,7 @@ var boardButtonCallback = function (t) {
     });*/
 
     return t.boardBar({
-        url: './war/index.html',
+        url: './javascript/editor/grapheditor/www/index.html',
         height:200
     })
 
