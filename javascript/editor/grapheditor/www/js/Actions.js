@@ -25,7 +25,9 @@ Actions.prototype.init = function()
 	};
 
 	// File actions
-	this.addAction('new...', function() { window.open(ui.getUrl()); });
+	this.addAction('attach...', function() {
+        ui.saveFile(false);
+	});
 	this.addAction('open...', function()
 	{
 		window.openNew = true;

@@ -3232,8 +3232,12 @@ EditorUi.prototype.save = function(name)
 					var encoded = encodeURIComponent(xml);
 					console.log("saving"+ encoded);
 
-					new mxXmlRequest(SAVE_URL, 'filename=' + encodeURIComponent(name) +
-						'&xml=' + encodeURIComponent(xml)).simulate(document, '_blank');
+					/* new mxXmlRequest(SAVE_URL, 'filename=' + encodeURIComponent(name) +
+						'&xml=' + encodeURIComponent(xml)).simulate(document, '_blank'); */
+
+					console.log("attach from editor-iframe");
+					window.parent.attachLink({xml: encoded, name: name});
+
 				}
 				else
 				{

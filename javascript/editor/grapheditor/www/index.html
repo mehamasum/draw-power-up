@@ -31,10 +31,22 @@
 </iframe>
 
 <script>
-	window.closeOverlay = function (args) {
+	var t = TrelloPowerUp.iframe();
+
+	window.closeOverlay = function (arg) {
 		console.log("close from index");
-		var t = TrelloPowerUp.iframe();
 		t.closeOverlay().done();
+	};
+
+	window.attachLink = function (arg) {
+
+		console.log("attach from index");
+		var url = "www.drawintrello.com?xml="+arg.xml+"&filename="+arg.name;
+
+		t.attach({url: url, name: arg.name})
+				.then(function () {
+					t.closeOverlay().done();
+				})
 	}
 </script>
 

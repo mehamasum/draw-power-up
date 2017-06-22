@@ -119,6 +119,8 @@
                         codec.decode(doc.documentElement, model);
 
 
+                        // this.editor.filename
+
                         var children = model.getChildren(model.getChildAt(model.getRoot(), 0));
                         editorUi.editor.graph.importCells(children);
                     }
