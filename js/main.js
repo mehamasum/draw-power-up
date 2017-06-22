@@ -116,11 +116,15 @@ var boardButtonCallback = function (t) {
             }
         ]
     });*/
+    
 
-    return t.boardBar({
+    return t.overlay({
         url: './javascript/editor/grapheditor/www/index.html',
-        height:200
+        args: {rand: (Math.random() * 100).toFixed(0)}
     })
+        .then(function () {
+            return t.closePopup();
+        });
 
 };
 
