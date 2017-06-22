@@ -21,7 +21,7 @@
       var t = TrelloPowerUp.iframe();
 
       // you can access arguments passed to your iframe like so
-      var arg = t.arg('arg');
+      var list = t.arg('arg');
 
       // passed claimed objects
       /*
@@ -45,10 +45,10 @@
 
        */
 
-      var size = arg.length;
-      var list = $("#attached-list");
+      var size = list.length;
+      var section = $("#attached-list");
       for(var i=0; i<size; i++) {
-        list.innerHTML += "<div>" +
+        section.innerHTML += "<div>" +
                 "<p>"+list[i]['name']+"</p>" +
                 "<button onclick='openDrawing("+list[i]['url']+" , "+list[i]['name']+")'>"+"Open"+"</button>"+
                 "</div>"
