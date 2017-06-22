@@ -228,6 +228,10 @@ TrelloPowerUp.initialize({
     },
 
     'attachment-sections': function (t, options) {
+
+        console.log(JSON.stringify(options));
+
+
         // options.entries is a list of the attachments for this card
         // you can look through them and 'claim' any that you want to
         // include in your section.
