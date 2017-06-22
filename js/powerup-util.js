@@ -1,1 +1,1 @@
-const BASE_URL = "www.drawintrello.com";
+const BASE_URL = "https://www.drawintrello.com";
