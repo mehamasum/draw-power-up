@@ -257,7 +257,7 @@ TrelloPowerUp.initialize({
                 id: BASE_URL, // optional if you aren't using a function for the title
                 claimed: claimed,
                 icon: GRAY_ICON,
-                title: 'Attached Drawings',
+                title: 'New Drawings',
                 content: {
                     type: 'iframe',
                     url: t.signUrl('./section.html', {arg: claimed}),
