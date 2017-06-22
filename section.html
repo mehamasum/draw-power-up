@@ -49,9 +49,9 @@
       var list = $("#attached-list");
       for(var i=0; i<size; i++) {
         list.innerHTML += "<div>" +
-                "<p>"+list[i].name+"</p>" +
-                "<button onclick='openDrawing(list[i].url, list[i].name)'>"+"Open"+"</button>"+
-                "<button onclick='saveDrawing(list[i].url, list[i].name)'>"+"Download XML"+"</button>"+
+                "<p>"+list[i]['name']+"</p>" +
+                "<button onclick='openDrawing(list[i]['url'], list[i]['name'])'>"+"Open"+"</button>"+
+                "<button onclick='saveDrawing(list[i]['url'], list[i]['name'])'>"+"Download XML"+"</button>"+
                 "</div>"
       }
 
