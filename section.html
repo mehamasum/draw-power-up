@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://trello.com/power-ups/power-up.css">
+    <script src="https://trello.com/power-ups/power-up.min.js"></script>
+  </head>
+  <body>
+    <div id="content">
+      <p>Tips for using attachment-sections</p>
+      <ol>
+        <li>Make sure your section feels at home on the card. It should fit in with the rest of the card and not stick out.</li>
+        <li>You can specify a height when you claim the section, and also use t.sizeTo() to make sure your section is the perfect height.</li>
+        <li>Try to keep the height of your sections to a minimum.</li>
+        <li>It should be obvious to the user what attachments went into your section. They shouldn't be left wondering were one of their attachments disappeared to.</li>
+      </ol>
+      <p class="u-quiet">Claimed attachment urls: <span id="urls"></span></p>
+    </div>
+    <script>
+      /* global TrelloPowerUp */
+
+      var t = TrelloPowerUp.iframe();
+
+      // you can access arguments passed to your iframe like so
+      var arg = t.arg('arg');
+
+      t.render(function(){
+        // make sure your rendering logic lives here, since we will
+        // recall this method as the user adds and removes attachments
+        // from your section
+        t.card('attachments')
+                .get('attachments')
+                .filter(function(attachment){
+                  return attachment.url.indexOf('http://www.nps.gov/yell/') == 0;
+                })
+                .then(function(yellowstoneAttachments){
+                  var urls = yellowstoneAttachments.map(function(a){ return a.url; });
+                  document.getElementById('urls').textContent = urls.join(', ');
+                })
+                .then(function(){
+                  return t.sizeTo('#content');
+                });
+      });
+
+    </script>
+  </body>
+</html>

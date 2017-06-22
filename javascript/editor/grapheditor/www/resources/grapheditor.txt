@@ -28,6 +28,7 @@ apply=Apply
 arrange=Arrange
 arrow=Arrow
 arrows=Arrows
+attach=Attach to Card
 automatic=Automatic
 autosave=Autosave
 autosize=Autosize
