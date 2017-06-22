@@ -6,6 +6,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="styles/grapheditor.css">
+    <script src="https://trello.com/power-ups/power-up.min.js"></script>
+
+
     <script type="text/javascript">
         // Parses URL parameters. Supported parameters are:
         // - lang=xy: Specifies the language of the user interface.
@@ -98,9 +101,39 @@
                 themes[Graph.prototype.defaultThemeName] = xhr[1].getDocumentElement();
 
                 // Main
-                new EditorUi(new Editor(urlParams['chrome'] == '0', themes));
-            }, function()
-            {
+                var editorUi = new EditorUi(new Editor(urlParams['chrome'] == '0', themes));
+
+                // custom import
+
+                var url = window.location.href;
+                var idx = url.lastIndexOf("#");
+                if (idx > 0) {
+                    var param = url.substring(idx + 1);
+                    console.log(param);
+
+                    var xml = decodeURIComponent(param);
+                    console.log(xml);
+
+                    try
+                    {
+                        var doc = mxUtils.parseXml(xml);
+                        var model = new mxGraphModel();
+                        var codec = new mxCodec(doc);
+                        codec.decode(doc.documentElement, model);
+
+
+                        var children = model.getChildren(model.getChildAt(model.getRoot(), 0));
+                        editorUi.editor.graph.importCells(children);
+                    }
+                    catch (e)
+                    {
+                        mxUtils.alert(mxResources.get('invalidOrMissingFile') + ': ' + e.message);
+                    }
+
+                }
+
+
+            }, function() {
                 document.body.innerHTML = '<center style="margin-top:10%;">Error loading resource files. Please check browser console.</center>';
             });
         })();

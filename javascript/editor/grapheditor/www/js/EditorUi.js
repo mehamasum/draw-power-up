@@ -3229,6 +3229,9 @@ EditorUi.prototype.save = function(name)
 			{
 				if (xml.length < MAX_REQUEST_SIZE)
 				{
+					var encoded = encodeURIComponent(xml);
+					console.log("saving"+ encoded);
+
 					new mxXmlRequest(SAVE_URL, 'filename=' + encodeURIComponent(name) +
 						'&xml=' + encodeURIComponent(xml)).simulate(document, '_blank');
 				}

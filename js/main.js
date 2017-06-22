@@ -116,7 +116,7 @@ var boardButtonCallback = function (t) {
             }
         ]
     });*/
-    
+
 
     return t.overlay({
         url: './javascript/editor/grapheditor/www/index.html',
