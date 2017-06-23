@@ -285,7 +285,7 @@ TrelloPowerUp.initialize({
                 },
                 initialize: {
                     type: 'iframe',
-                    url: TrelloPowerUp.util.relativeUrl('./overlay.html')
+                    url: TrelloPowerUp.util.relativeUrl('./authorize.html')
                 }
             };
         } else {
