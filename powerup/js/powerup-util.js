@@ -1,7 +1,7 @@
 const BASE_URL = "https://mehamasum.github.io/draw-power-up/editor.html";
 
 function formatDrawUrl(t, url) {
-    if (!/^https?:\/\/www\.mehamasum\.github\.io\/draw-power-up\/editor\.html/.test(url)) {
+    if (!/^https?:\/\/mehamasum\.github\.io\/draw-power-up\/editor\.html/.test(url)) {
         return null;
     }
 
