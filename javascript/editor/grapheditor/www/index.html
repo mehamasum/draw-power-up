@@ -60,13 +60,12 @@
 	var argUrl = t.arg('url');
 	var argName = t.arg('name');
 
+	console.log("index>> "+ argUrl +" "+ argName);
+
 	var iframeSrc = "./editor.html";
 
-	if(arg) {
-		var itemUrl = argUrl;
-		var itemName = argName;
-
-		iframeSrc = makeParam("./editor.html", itemUrl, itemName);
+	if(argUrl && argName) {
+		iframeSrc = makeParam("./editor.html", argUrl, argName);
 	}
 
 	var iframeHtml = "<iframe src="+ iframeSrc +" frameBorder='0'> <p>Your browser does not support iframes.</p> </iframe>";
