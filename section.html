@@ -16,12 +16,14 @@
       <p class="u-quiet">Claimed attachment urls: <span id="urls"></span></p>
     </div>
     <script>
+
       /* global TrelloPowerUp */
 
       var t = TrelloPowerUp.iframe();
 
       // you can access arguments passed to your iframe like so
       var list = t.arg('arg');
+      attachToHtml(list);
 
       // passed claimed objects
       /*
@@ -45,23 +47,29 @@
 
        */
 
-      var size = list.length;
-      var htmlList = "";
-      for(var i=0; i<size; i++) {
-        var itemUrl = list[i]['url'];
-        var itemName = list[i]['name'];
 
 
-        htmlList += "<div>" +
-                "<p>"+itemName+"</p>" +
-                "<button onclick='openDrawing(\""+itemUrl+"\", \""+itemName+"\")'> Open </button>"+
-                "</div>"
+
+      function attachToHtml(list) {
+        var toAttch = $("#attached-list");
+        toAttch.html("");
+
+        var size = list.length;
+        var htmlList = "";
+        for(var i=0; i<size; i++) {
+          var itemUrl = list[i]['url'];
+          var itemName = list[i]['name'];
+
+
+          htmlList += "<div>" +
+                  "<p>"+itemName+"</p>" +
+                  "<button onclick='openDrawing(\""+itemUrl+"\", \""+itemName+"\")'> Open </button>"+
+                  "</div>"
+        }
+
+        //console.log(htmlList);
+        toAttch.html(htmlList);
       }
-
-      console.log(htmlList);
-
-
-      $("#attached-list").html(htmlList);
 
       function openDrawing(url, name) {
          console.log("openDrawing: "+ url +" , "+ name);
@@ -79,12 +87,9 @@
         // from your section
         t.card('attachments')
                 .get('attachments')
-                .filter(function(attachment){
-                  return attachment.url.indexOf('http://www.nps.gov/yell/') == 0;
-                })
-                .then(function(yellowstoneAttachments){
-                  var urls = yellowstoneAttachments.map(function(a){ return a.url; });
-                  document.getElementById('urls').textContent = urls.join(', ');
+                .filter(drawFilter)
+                .then(function(list){
+                  attachToHtml(list);
                 })
                 .then(function(){
                   return t.sizeTo('#content');

@@ -33,3 +33,7 @@ function formatDrawUrl(t, url) {
 function makeDrawUrl(arg) {
     return BASE_URL+ "?xml="+arg.xml+"&filename="+arg.name;
 }
+
+var drawFilter = function (attachment) {
+    return attachment.url.indexOf(BASE_URL) == 0;
+};

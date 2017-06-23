@@ -237,9 +237,7 @@ TrelloPowerUp.initialize({
         // include in your section.
 
         // we will just claim urls for Yellowstone
-        var claimed = options.entries.filter(function (attachment) {
-            return attachment.url.indexOf(BASE_URL) == 0;
-        });
+        var claimed = options.entries.filter(drawFilter);
 
         // you can have more than one attachment section on a card
         // you can group items together into one section, have a section
