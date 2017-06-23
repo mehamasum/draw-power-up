@@ -29,9 +29,9 @@ Actions.prototype.init = function()
 		if(editor.trello)
         	ui.attachFile(false);
 		else{
-			/*var dlg = new EditDiagramDialog(ui);
-			ui.showDialog(dlg.container, 620, 420, true, true);
-			dlg.init();*/
+			var dlg = new UrlAttachDialog(ui);
+			ui.showDialog(dlg.container, 620, 320, true, true);
+			dlg.init();
 		}
 	});
 	this.addAction('open...', function()

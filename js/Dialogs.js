@@ -1701,6 +1701,70 @@ var EditDiagramDialog = function(editorUi)
 	this.container = div;
 };
 
+
+/**
+ * Constructs a new export link for Trello dialog.
+ */
+var UrlAttachDialog = function(editorUi)
+{
+	var div = document.createElement('div');
+	div.style.textAlign = 'left';
+
+	var instruction = document.createElement('p');
+	instruction.innerHTML = "Copy the link in the box below and paste it in the back of your Trello card";
+	instruction.style.marginBottom = '16px';
+	div.appendChild(instruction);
+
+	var instruction2 = document.createElement('h3');
+	instruction2.innerHTML = "Card Back > New Drawing > From Url";
+	instruction2.style.marginBottom = '16px';
+	div.appendChild(instruction2);
+
+	var textarea = document.createElement('textarea');
+	textarea.setAttribute('wrap', 'on');
+	textarea.style.overflow = 'auto';
+	textarea.style.resize = 'none';
+	textarea.style.width = '600px';
+	textarea.style.height = '150px';
+	textarea.style.marginBottom = '16px';
+
+	var xml = editorUi.editor.getGraphXml();
+	textarea.value = makeDrawUrl({xml: xml, name: editorUi.editor.getOrCreateFilename()});
+
+	div.appendChild(textarea);
+
+	this.init = function()
+	{
+		textarea.focus();
+	};
+
+
+	var cancelBtn = mxUtils.button(mxResources.get('cancel'), function()
+	{
+		editorUi.hideDialog();
+	});
+	cancelBtn.className = 'geBtn';
+
+	if (editorUi.editor.cancelFirst)
+	{
+		div.appendChild(cancelBtn);
+	}
+
+	var okBtn = mxUtils.button(mxResources.get('ok'), function()
+	{
+		editorUi.hideDialog();
+	});
+	okBtn.className = 'geBtn gePrimaryBtn';
+	div.appendChild(okBtn);
+
+	if (!editorUi.editor.cancelFirst)
+	{
+		div.appendChild(cancelBtn);
+	}
+
+	this.container = div;
+};
+
 /**
  * Constructs a new export dialog.
  */
