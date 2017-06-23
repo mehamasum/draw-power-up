@@ -35,5 +35,7 @@ function makeDrawUrl(arg) {
 }
 
 var drawFilter = function (attachment) {
-    return attachment.url.indexOf(BASE_URL) == 0;
+    var name = formatDrawUrl(null, attachment);
+    if(name) return true;
+    return false;
 };
