@@ -3274,7 +3274,7 @@ EditorUi.prototype.save = function(name)
 			if (xml.length < MAX_REQUEST_SIZE)
 			{
 				var element = document.createElement('a');
-				element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(xml));
+				element.setAttribute('href', 'data:text/xml;charset=utf-8,' + encodeURIComponent(xml));
 				element.setAttribute('download', name);
 
 				element.style.display = 'none';
