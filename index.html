@@ -38,6 +38,11 @@
 		t.closeOverlay().done();
 	};
 
+	window.permit = function () {
+		if(t.args[0].context) return true;
+		else return false;
+	};
+
 	window.attachLink = function (arg) {
 
 		const canEdit = t.args[0].context.permissions.board === 'write';

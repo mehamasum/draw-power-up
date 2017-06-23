@@ -3244,7 +3244,7 @@ EditorUi.prototype.save = function(name)
 		
 		try
 		{
-			if (Editor.useLocalStorage)
+			/*if (Editor.useLocalStorage)
 			{
 				if (localStorage.getItem(name) != null &&
 					!mxUtils.confirm(mxResources.get('replaceIt', [name])))
@@ -3269,6 +3269,25 @@ EditorUi.prototype.save = function(name)
 					
 					return;
 				}
+			}*/
+
+			if (xml.length < MAX_REQUEST_SIZE)
+			{
+				var element = document.createElement('a');
+				element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(xml));
+				element.setAttribute('download', name);
+
+				element.style.display = 'none';
+				document.body.appendChild(element);
+				element.click();
+				document.body.removeChild(element);
+			}
+			else
+			{
+				mxUtils.alert(mxResources.get('drawingTooLarge'));
+				mxUtils.popup(xml);
+
+				return;
 			}
 
 			this.editor.setModified(false);

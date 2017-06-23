@@ -1,7 +1,7 @@
-const BASE_URL = "https://www.drawintrello.com/draw";
+const BASE_URL = "https://mehamasum.github.io/draw-power-up/editor.html";
 
 function formatDrawUrl(t, url) {
-    if (!/^https?:\/\/www\.drawintrello\.com\/draw/.test(url)) {
+    if (!/^https?:\/\/www\.mehamasum\.github\.io\/draw-power-up\/editor\.html/.test(url)) {
         return null;
     }
 

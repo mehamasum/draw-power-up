@@ -26,7 +26,13 @@ Actions.prototype.init = function()
 
 	// File actions
 	this.addAction('attach...', function() {
-        ui.attachFile(false);
+		if(editor.trello)
+        	ui.attachFile(false);
+		else{
+			/*var dlg = new EditDiagramDialog(ui);
+			ui.showDialog(dlg.container, 620, 420, true, true);
+			dlg.init();*/
+		}
 	});
 	this.addAction('open...', function()
 	{
@@ -82,10 +88,12 @@ Actions.prototype.init = function()
 	this.addAction('pageSetup...', function() { ui.showDialog(new PageSetupDialog(ui).container, 320, 220, true, true); }).isEnabled = isGraphEnabled;
 	this.addAction('print...', function() { ui.showDialog(new PrintDialog(ui).container, 300, 180, true, true); }, null, 'sprite-print', 'Ctrl+P');
 	this.addAction('preview', function() { mxUtils.show(graph, null, 10, 10); });
+
 	this.addAction('close', function () {
         console.log("close from editor-iframe");
-        window.parent.closeOverlay(null);
-	}, true, null);
+		if(editor.trello)
+        	window.parent.closeOverlay(null);
+	}, null, null);
 
 	// Edit actions
 	this.addAction('undo', function() { ui.undo(); }, null, 'sprite-undo', 'Ctrl+Z');
