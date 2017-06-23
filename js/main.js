@@ -224,6 +224,10 @@ TrelloPowerUp.initialize({
             icon: GRAY_ICON,
             text: 'New Drawing',
             callback: cardButtonCallback
+        }, {
+            icon: GRAY_ICON,
+            text: 'Attach from link',
+            callback: cardButtonCallback
         }];
     },
 
