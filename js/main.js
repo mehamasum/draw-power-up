@@ -295,7 +295,7 @@ TrelloPowerUp.initialize({
         return getBadges(t);
     },
     'card-from-url': function (t, options) {
-        var parkName = formatNPSUrl(t, options.url);
+        /*var parkName = formatNPSUrl(t, options.url);
         if (parkName) {
             return {
                 name: parkName,
@@ -303,10 +303,10 @@ TrelloPowerUp.initialize({
             };
         } else {
             throw t.NotHandled();
-        }
+        }*/
     },
     'format-url': function (t, options) {
-        var parkName = formatNPSUrl(t, options.url);
+        var parkName = formatDrawUrl(t, options.url);
         if (parkName) {
             return {
                 icon: GRAY_ICON,
