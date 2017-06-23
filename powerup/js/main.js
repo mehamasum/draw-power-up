@@ -154,7 +154,7 @@ var cardButtonCallback = function (t) {
     });*/
 
     return t.overlay({
-        url: '../../../index.html',
+        url: '../index.html',
         args: {rand: (Math.random() * 100).toFixed(0)}
     })
         .then(function () {
