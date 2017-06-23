@@ -79,6 +79,10 @@
 
       function openDrawing(url, name) {
          console.log("openDrawing: "+ url +" , "+ name);
+          return t.overlay({
+              url: './javascript/editor/grapheditor/www/index.html',
+              args: {url: url, name: name}
+          });
       }
 
       function saveDrawing(url, name) {

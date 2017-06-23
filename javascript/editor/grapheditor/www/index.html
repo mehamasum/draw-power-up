@@ -26,14 +26,13 @@
 	</style>
 </head>
 
+<body>
 
-<iframe src="./editor.html" frameBorder="0">
-	<p>Your browser does not support iframes.</p>
-</iframe>
 
 <script>
-	var t = TrelloPowerUp.iframe();
 
+
+	var t = TrelloPowerUp.iframe();
 	window.closeOverlay = function (arg) {
 		console.log("close from index");
 		t.closeOverlay().done();
@@ -55,7 +54,23 @@
 		else {
 			t.closeOverlay().done();
 		}
+	};
+
+	// you can access arguments passed to your iframe like so
+	var arg = t.arg('arg');
+
+	var iframeSrc = "./editor.html";
+
+	if(arg) {
+		var itemUrl = arg.url;
+		var itemName = arg.name;
+
+		iframeSrc = makeParam("./editor.html", itemUrl, itemName);
 	}
+
+	var iframeHtml = "<iframe src="+ iframeSrc +" frameBorder='0'> <p>Your browser does not support iframes.</p> </iframe>";
+
+	$("body").append(iframeHtml);
 </script>
 
 </body>

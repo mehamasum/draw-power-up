@@ -34,6 +34,10 @@ function makeDrawUrl(arg) {
     return BASE_URL+ "?xml="+arg.xml+"&filename="+arg.name;
 }
 
+function makeParam(base, xml, name) {
+    return base+ "?xml="+xml+"&filename="+name;
+}
+
 var drawFilter = function (attachment) {
     var name = formatDrawUrl(null, attachment.url);
     if(name) return true;
