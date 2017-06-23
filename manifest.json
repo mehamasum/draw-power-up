@@ -22,7 +22,7 @@
   ],
   "connectors": {
     "iframe": {
-      "url": "./powerup/frames/main.html"
+      "url": "./powerup/main.html"
     }
   },
   "recommend": {
