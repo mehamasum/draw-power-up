@@ -107,7 +107,7 @@
 
                     try
                     {
-                        editorUi.editor.filename = urlParams["filename"];
+                        editorUi.editor.reopend = decodeURIComponent(urlParams["filename"]);
 
                         var doc = mxUtils.parseXml(xml);
                         var model = new mxGraphModel();

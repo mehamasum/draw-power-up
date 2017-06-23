@@ -79,6 +79,8 @@
 
       function openDrawing(url, name) {
          console.log("openDrawing: "+ url +" , "+ name);
+
+          // this name is already decoded
           return t.overlay({
               url: './../index.html',
               args: {url: url, name: name}

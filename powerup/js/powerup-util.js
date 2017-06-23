@@ -5,7 +5,6 @@ function formatDrawUrl(t, url) {
         return null;
     }
 
-
     var result = {};
     var idx = url.lastIndexOf('?');
 
@@ -22,7 +21,7 @@ function formatDrawUrl(t, url) {
                 result[params[i].substring(0, idx)] = params[i].substring(idx + 1);
             }
         }
-        return result["filename"];
+        return decodeURIComponent(result["filename"]);
     }
 
     else {
@@ -31,11 +30,16 @@ function formatDrawUrl(t, url) {
 }
 
 function makeDrawUrl(arg) {
-    return BASE_URL+ "?xml="+arg.xml+"&filename="+arg.name;
+    // arg is encoded here
+    // this going to get attached to card
+    var e_xml = encodeURIComponent(arg.xml);
+    var e_name = encodeURIComponent(arg.name);
+    return BASE_URL+ "?xml="+e_xml+"&filename="+e_name;
 }
 
 function makeParam(base, xml, name) {
-    return base+ "?xml="+xml+"&filename="+name;
+    var e_name = encodeURIComponent(name);
+    return base+ "?xml="+xml+"&filename="+e_name;
 }
 
 var drawFilter = function (attachment) {

@@ -3300,38 +3300,16 @@ EditorUi.prototype.attach = function(name)
 
 		try
 		{
-			if (Editor.useLocalStorage)
+			if (xml.length < MAX_REQUEST_SIZE)
 			{
-				if (localStorage.getItem(name) != null &&
-					!mxUtils.confirm(mxResources.get('replaceIt', [name])))
-				{
-					return;
-				}
-
-				localStorage.setItem(name, xml);
-				this.editor.setStatus(mxUtils.htmlEntities(mxResources.get('saved')) + ' ' + new Date());
+				console.log("attach from editor-iframe");
+				window.parent.attachLink({xml: xml, name: name});
 			}
 			else
 			{
-				if (xml.length < MAX_REQUEST_SIZE)
-				{
-					var encoded = encodeURIComponent(xml);
-					console.log("saving"+ encoded);
-
-					/* new mxXmlRequest(SAVE_URL, 'filename=' + encodeURIComponent(name) +
-					 '&xml=' + encodeURIComponent(xml)).simulate(document, '_blank'); */
-
-					console.log("attach from editor-iframe");
-					window.parent.attachLink({xml: encoded, name: name});
-
-				}
-				else
-				{
-					mxUtils.alert(mxResources.get('drawingTooLarge'));
-					mxUtils.popup(xml);
-
-					return;
-				}
+				mxUtils.alert(mxResources.get('drawingTooLarge'));
+				mxUtils.popup(xml);
+				return;
 			}
 
 			this.editor.setModified(false);

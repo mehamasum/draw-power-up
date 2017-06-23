@@ -57,13 +57,14 @@
 	};
 
 	// you can access arguments passed to your iframe like so
-	var argUrl = t.arg('url');
-	var argName = t.arg('name');
+	var argUrl = t.arg('url'); // still encoded
+	var argName = t.arg('name'); // already decoded
 
 	var iframeSrc = "./editor.html";
 
+
 	if(argUrl && argName) {
-		iframeSrc = makeParam("./editor.html", argUrl, argName);
+		iframeSrc = makeParam("./editor.html", argUrl, argName); // decode file name again
 	}
 
 	var iframeHtml = "<iframe src="+ iframeSrc +" frameBorder='0'> <p>Your browser does not support iframes.</p> </iframe>";
