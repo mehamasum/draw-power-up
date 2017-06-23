@@ -7,7 +7,6 @@
   },
   "author": "Meha Masum",
   "capabilities": [
-    "attachment-sections",
     "attachment-thumbnail",
     "board-buttons",
     "callback",

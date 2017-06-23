@@ -227,7 +227,7 @@ TrelloPowerUp.initialize({
         }];
     },
 
-    'attachment-sections': function (t, options) {
+    /*'attachment-sections': function (t, options) {
 
         //console.log(JSON.stringify(options));
 
@@ -265,20 +265,24 @@ TrelloPowerUp.initialize({
         } else {
             return [];
         }
-    },
-    'attachment-thumbnail': function (t, options) {
-        var parkName = formatNPSUrl(t, options.url);
-        if (parkName) {
+    },*/
+    'attachment-thumbnail': function (t, attachment) {
+        var name = formatDrawUrl(t, attachment.url);
+        if (name) {
             // return an object with some or all of these properties:
             // url, title, image, openText, modified (Date), created (Date), createdBy, modifiedBy
             return {
-                url: options.url,
-                title: parkName,
+                title: name,
+                url: attachment.url,
+                openText: "Open Externally",
                 image: {
-                    url: './images/nps.svg',
-                    logo: true // false if you are using a thumbnail of the content
+                    url: './images/icon-gray.svg',
+                    logo: true // false if this is a thumbnail
                 },
-                openText: 'Open in NPS'
+                initialize: {
+                    type: 'iframe',
+                    url: TrelloPowerUp.util.relativeUrl('./overlay.html')
+                }
             };
         } else {
             throw t.NotHandled();
