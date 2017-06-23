@@ -1,10 +1,77 @@
+<!DOCTYPE html>
 <html>
-  <script src="https://trello.com/power-ups/power-up.min.js"></script>
-  <script src="./js/main.js"></script>
-  <script src="./js/powerup-util.js"></script>
-  <!-- jQuery -->
-  <script
-          src="https://code.jquery.com/jquery-2.2.4.min.js"
-          integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-          crossorigin="anonymous"></script>
+<head>
+	<link rel="stylesheet" href="https://trello.com/power-ups/power-up.css">
+	<script src="https://trello.com/power-ups/power-up.min.js"></script>
+	<script src="powerup/js/powerup-util.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<style>
+		html,
+		body {
+			height: 100%;
+		}
+		body {
+			background: rgba(0,0,0,.5);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		iframe {
+			background: white;
+			width: 90%;
+			max-width: 90%;
+			height: 90%;
+			max-height: 90%;
+		}
+	</style>
+</head>
+
+<body>
+
+
+<script>
+
+
+	var t = TrelloPowerUp.iframe();
+	window.closeOverlay = function (arg) {
+		console.log("close from index");
+		t.closeOverlay().done();
+	};
+
+	window.attachLink = function (arg) {
+
+		const canEdit = t.args[0].context.permissions.board === 'write';
+
+		if(canEdit) {
+			console.log("attach from index");
+			var url = makeDrawUrl(arg);
+
+			t.attach({url: url, name: arg.name})
+					.then(function () {
+						t.closeOverlay().done();
+					})
+		}
+		else {
+			t.closeOverlay().done();
+		}
+	};
+
+	// you can access arguments passed to your iframe like so
+	var argUrl = t.arg('url');
+	var argName = t.arg('name');
+
+	console.log("index>> "+ argUrl +" "+ argName);
+
+	var iframeSrc = "./editor.html";
+
+	if(argUrl && argName) {
+		iframeSrc = makeParam("./editor.html", argUrl, argName);
+	}
+
+	var iframeHtml = "<iframe src="+ iframeSrc +" frameBorder='0'> <p>Your browser does not support iframes.</p> </iframe>";
+
+	$("body").append(iframeHtml);
+</script>
+
+</body>
 </html>
