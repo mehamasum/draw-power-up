@@ -74,7 +74,17 @@ var getBadges = function (t) {
         })
 };
 
-
+var formatNPSUrl = function (t, url) {
+    if (!/^https?:\/\/www\.nps\.gov\/[a-z]{4}\//.test(url)) {
+        return null;
+    }
+    var parkShort = /^https?:\/\/www\.nps\.gov\/([a-z]{4})\//.exec(url)[1];
+    if (parkShort && parkMap[parkShort]) {
+        return parkMap[parkShort];
+    } else {
+        return null;
+    }
+};
 
 var boardButtonCallback = function (t) {
     /*return t.popup({
@@ -295,7 +305,7 @@ TrelloPowerUp.initialize({
         return getBadges(t);
     },
     'card-from-url': function (t, options) {
-        /*var parkName = formatNPSUrl(t, options.url);
+        var parkName = formatNPSUrl(t, options.url);
         if (parkName) {
             return {
                 name: parkName,
@@ -303,7 +313,7 @@ TrelloPowerUp.initialize({
             };
         } else {
             throw t.NotHandled();
-        }*/
+        }
     },
     'format-url': function (t, options) {
         var parkName = formatDrawUrl(t, options.url);
