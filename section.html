@@ -60,7 +60,11 @@
         var htmlList = "";
         for(var i=0; i<size; i++) {
           var itemUrl = list[i]['url'];
-          var itemName = list[i]['name'];
+
+          // var itemName = list[i]['name'];
+          // not picking the name from what i have been given
+          // bad ux when trello built attachment
+          var itemName = formatDrawUrl(list[i]['url']);
 
 
           htmlList += "<div>" +
