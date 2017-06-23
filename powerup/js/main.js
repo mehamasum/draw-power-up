@@ -167,7 +167,7 @@ TrelloPowerUp.initialize({
 
     'authorization-status': function(t) {
 
-        return t.get('board', 'private', KEY_ACCESS_TOKEN, DEFAULT)
+        /*return t.get('board', 'private', KEY_ACCESS_TOKEN, DEFAULT)
             .then(function (token) {
                 console.log(token);
 
@@ -191,7 +191,11 @@ TrelloPowerUp.initialize({
 
                 }
 
-            });
+            });*/
+
+        return new TrelloPowerUp.Promise((resolve) =>
+            resolve({ authorized: true })
+        )
 
     },
 
