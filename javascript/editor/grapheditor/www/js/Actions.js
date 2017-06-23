@@ -26,7 +26,7 @@ Actions.prototype.init = function()
 
 	// File actions
 	this.addAction('attach...', function() {
-        ui.saveFile(false);
+        ui.attachFile(false);
 	});
 	this.addAction('open...', function()
 	{

@@ -45,7 +45,7 @@
 
 		if(canEdit) {
 			console.log("attach from index");
-			var url = BASE_URL+ "?xml="+arg.xml+"&filename="+arg.name;
+			var url = makeDrawUrl(arg);
 
 			t.attach({url: url, name: arg.name})
 					.then(function () {

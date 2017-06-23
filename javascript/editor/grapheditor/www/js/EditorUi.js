@@ -3199,6 +3199,36 @@ EditorUi.prototype.saveFile = function(forceDialog)
 };
 
 /**
+ * Adds the label menu items to the given menu and parent.
+ */
+EditorUi.prototype.attachFile = function(forceDialog)
+{
+	if (!forceDialog && this.editor.filename != null)
+	{
+		this.attach(this.editor.getOrCreateFilename());
+	}
+	else
+	{
+		var dlg = new FilenameDialog(this, this.editor.getOrCreateFilename(), mxResources.get('save'), mxUtils.bind(this, function(name)
+		{
+			this.attach(name);
+		}), null, mxUtils.bind(this, function(name)
+		{
+			if (name != null && name.length > 0)
+			{
+				return true;
+			}
+
+			mxUtils.confirm(mxResources.get('invalidName'));
+
+			return false;
+		}));
+		this.showDialog(dlg.container, 300, 100, true, true);
+		dlg.init();
+	}
+};
+
+/**
  * Saves the current graph under the given filename.
  */
 EditorUi.prototype.save = function(name)
@@ -3229,11 +3259,67 @@ EditorUi.prototype.save = function(name)
 			{
 				if (xml.length < MAX_REQUEST_SIZE)
 				{
+					new mxXmlRequest(SAVE_URL, 'filename=' + encodeURIComponent(name) +
+						'&xml=' + encodeURIComponent(xml)).simulate(document, '_blank');
+				}
+				else
+				{
+					mxUtils.alert(mxResources.get('drawingTooLarge'));
+					mxUtils.popup(xml);
+					
+					return;
+				}
+			}
+
+			this.editor.setModified(false);
+			this.editor.setFilename(name);
+			this.updateDocumentTitle();
+		}
+		catch (e)
+		{
+			this.editor.setStatus(mxUtils.htmlEntities(mxResources.get('errorSavingFile')));
+		}
+	}
+};
+
+
+
+/**
+ * Saves the current graph under the given filename.
+ */
+EditorUi.prototype.attach = function(name)
+{
+	if (name != null)
+	{
+		if (this.editor.graph.isEditing())
+		{
+			this.editor.graph.stopEditing();
+		}
+
+		var xml = mxUtils.getXml(this.editor.getGraphXml());
+
+		try
+		{
+			if (Editor.useLocalStorage)
+			{
+				if (localStorage.getItem(name) != null &&
+					!mxUtils.confirm(mxResources.get('replaceIt', [name])))
+				{
+					return;
+				}
+
+				localStorage.setItem(name, xml);
+				this.editor.setStatus(mxUtils.htmlEntities(mxResources.get('saved')) + ' ' + new Date());
+			}
+			else
+			{
+				if (xml.length < MAX_REQUEST_SIZE)
+				{
 					var encoded = encodeURIComponent(xml);
 					console.log("saving"+ encoded);
 
 					/* new mxXmlRequest(SAVE_URL, 'filename=' + encodeURIComponent(name) +
-						'&xml=' + encodeURIComponent(xml)).simulate(document, '_blank'); */
+					 '&xml=' + encodeURIComponent(xml)).simulate(document, '_blank'); */
 
 					console.log("attach from editor-iframe");
 					window.parent.attachLink({xml: encoded, name: name});
@@ -3243,7 +3329,7 @@ EditorUi.prototype.save = function(name)
 				{
 					mxUtils.alert(mxResources.get('drawingTooLarge'));
 					mxUtils.popup(xml);
-					
+
 					return;
 				}
 			}

@@ -74,17 +74,7 @@ var getBadges = function (t) {
         })
 };
 
-var formatNPSUrl = function (t, url) {
-    if (!/^https?:\/\/www\.nps\.gov\/[a-z]{4}\//.test(url)) {
-        return null;
-    }
-    var parkShort = /^https?:\/\/www\.nps\.gov\/([a-z]{4})\//.exec(url)[1];
-    if (parkShort && parkMap[parkShort]) {
-        return parkMap[parkShort];
-    } else {
-        return null;
-    }
-};
+
 
 var boardButtonCallback = function (t) {
     /*return t.popup({
@@ -222,7 +212,7 @@ TrelloPowerUp.initialize({
     'card-buttons': function (t, options) {
         return [{
             icon: GRAY_ICON,
-            text: 'Attach Drawing',
+            text: 'New Drawing',
             callback: cardButtonCallback
         }];
     },
@@ -257,7 +247,7 @@ TrelloPowerUp.initialize({
                 id: BASE_URL, // optional if you aren't using a function for the title
                 claimed: claimed,
                 icon: GRAY_ICON,
-                title: 'New Drawings',
+                title: 'Attached Drawings',
                 content: {
                     type: 'iframe',
                     url: t.signUrl('./section.html', {arg: claimed}),
