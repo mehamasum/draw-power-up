@@ -57,13 +57,14 @@
 	};
 
 	// you can access arguments passed to your iframe like so
-	var arg = t.arg('arg');
+	var argUrl = t.arg('url');
+	var argName = t.arg('name');
 
 	var iframeSrc = "./editor.html";
 
 	if(arg) {
-		var itemUrl = arg.url;
-		var itemName = arg.name;
+		var itemUrl = argUrl;
+		var itemName = argName;
 
 		iframeSrc = makeParam("./editor.html", itemUrl, itemName);
 	}
