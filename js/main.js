@@ -316,11 +316,14 @@ TrelloPowerUp.initialize({
         }
     },
     'format-url': function (t, options) {
-        var parkName = formatDrawUrl(t, options.url);
-        if (parkName) {
+        var name = formatDrawUrl(t, options.url);
+
+        console.log("format-url> "+JSON.stringify(name));
+
+        if (name) {
             return {
                 icon: GRAY_ICON,
-                text: parkName
+                text: name
             };
         } else {
             throw t.NotHandled();
