@@ -231,7 +231,7 @@ TrelloPowerUp.initialize({
         }];
     },
 
-    /*'attachment-sections': function (t, options) {
+    'attachment-sections': function (t, options) {
 
         //console.log(JSON.stringify(options));
 
@@ -269,9 +269,9 @@ TrelloPowerUp.initialize({
         } else {
             return [];
         }
-    },*/
+    },
     'attachment-thumbnail': function (t, attachment) {
-        var name = formatDrawUrl(t, attachment.url);
+        /*var name = formatDrawUrl(t, attachment.url);
         if (name) {
             // return an object with some or all of these properties:
             // url, title, image, openText, modified (Date), created (Date), createdBy, modifiedBy
@@ -290,7 +290,7 @@ TrelloPowerUp.initialize({
             };
         } else {
             throw t.NotHandled();
-        }
+        }*/
     },
 
     // Allows you to add one or more buttons to a Board at the top right of the screen
