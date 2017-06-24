@@ -271,7 +271,7 @@ TrelloPowerUp.initialize({
         }
     },
     'attachment-thumbnail': function (t, attachment) {
-        /*var name = formatDrawUrl(t, attachment.url);
+        var name = formatDrawUrl(t, attachment.url);
         if (name) {
             // return an object with some or all of these properties:
             // url, title, image, openText, modified (Date), created (Date), createdBy, modifiedBy
@@ -290,7 +290,7 @@ TrelloPowerUp.initialize({
             };
         } else {
             throw t.NotHandled();
-        }*/
+        }
     },
 
     // Allows you to add one or more buttons to a Board at the top right of the screen
@@ -303,7 +303,10 @@ TrelloPowerUp.initialize({
     },
 
 
-    'card-badges': function (t, options) {
+    'card-badges': function (t, card) {
+        console.log('card-badges');
+        console.log(JSON.stringify(t));
+        console.log(JSON.stringify(card));
         return getBadges(t);
     },
 
