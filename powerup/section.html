@@ -552,10 +552,6 @@
       /* global TrelloPowerUp */
       var t = TrelloPowerUp.iframe();
 
-      // you can access arguments passed to your iframe like so
-      var list = t.arg('arg');
-      attachToHtml(list);
-
       function attachToHtml(list) {
         var toAttch = document.getElementById('attached-list');
         toAttch.innerHTML = "";
@@ -578,9 +574,9 @@
           preview.className = "attachment-thumbnail-preview js-opener";
           preview.setAttribute('href', "#");
           preview.innerHTML='<span class="attachment-thumbnail-preview-power-up-logo">'+
-                              '<img class="attachment-thumbnail-preview-power-up-logo-image"'+
-                                ' src="https://mehamasum.github.io/draw-power-up/powerup/images/icon-gray.svg?color=999">'+
-                            '</span>';
+                  '<img class="attachment-thumbnail-preview-power-up-logo-image"'+
+                  ' src="https://mehamasum.github.io/draw-power-up/powerup/images/icon-gray.svg?color=999">'+
+                  '</span>';
           div.appendChild(preview);
 
           var details = document.createElement('p');
@@ -617,18 +613,23 @@
       }
 
       function openDrawing(url, name) {
-         console.log("openDrawing: "+ url +" , "+ name);
+        console.log("openDrawing: "+ url +" , "+ name);
 
-          // this name is already decoded
-          return t.overlay({
-              url: './../index.html',
-              args: {url: url, name: name}
-          });
+        // this name is already decoded
+        return t.overlay({
+          url: './../index.html',
+          args: {url: url, name: name}
+        });
       }
 
       function saveDrawing(url, name) {
         console.log("saveDrawing: "+ url +" , "+ name);
       }
+
+      // you can access arguments passed to your iframe like so
+      var list = t.arg('arg');
+      attachToHtml(list);
+      t.sizeTo('#content');
 
       t.render(function(){
         console.log("rendering section!!!");
