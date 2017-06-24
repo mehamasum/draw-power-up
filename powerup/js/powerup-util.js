@@ -29,6 +29,35 @@ function formatDrawUrl(t, url) {
     }
 }
 
+function extractXML(url) {
+    if (!/^https?:\/\/mehamasum\.github\.io\/draw-power-up\/editor\.html/.test(url)) {
+        return null;
+    }
+
+    var result = {};
+    var idx = url.lastIndexOf('?');
+
+    if (idx > 0)
+    {
+        var params = url.substring(idx + 1).split('&');
+
+        for (var i = 0; i < params.length; i++)
+        {
+            idx = params[i].indexOf('=');
+
+            if (idx > 0)
+            {
+                result[params[i].substring(0, idx)] = params[i].substring(idx + 1);
+            }
+        }
+        return decodeURIComponent(result["xml"]);
+    }
+
+    else {
+        return null;
+    }
+}
+
 function makeDrawUrl(arg) {
     // arg is encoded here
     // this going to get attached to card

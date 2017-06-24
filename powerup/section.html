@@ -641,7 +641,7 @@
       function saveDrawing(url, name) {
         console.log("saveDrawing: "+ url +" , "+ name);
         var element = document.createElement('a');
-        element.setAttribute('href', 'data:text/xml;charset=utf-8,' + encodeURIComponent(url));
+        element.setAttribute('href', 'data:text/xml;charset=utf-8,' + extractXML(url));
         element.setAttribute('download', name);
 
         element.style.display = 'none';
