@@ -650,19 +650,16 @@
                 });
       });
 
-      $(document).ready(function () {
+      console.log(">>>>>>>>>>>>section ready!!>>>>>>>>>>>");
 
-        console.log(">>>>>>>>>>>>section ready!!>>>>>>>>>>>");
+      $(".js-opener" ).click(function() {
+        var item = $(this);
+        openDrawing(item.data("url"), item.data("name"));
+      });
 
-        $(".js-opener" ).click(function() {
-          var item = $(this);
-          openDrawing(item.data("url"), item.data("name"));
-        });
-
-        $(".js-saver" ).click(function() {
-          var item = $(this);
-          saveDrawing(item.data("url"), item.data("name"));
-        });
+      $(".js-saver" ).click(function() {
+        var item = $(this);
+        saveDrawing(item.data("url"), item.data("name"));
       });
 
 
