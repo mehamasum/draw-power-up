@@ -85,27 +85,12 @@
                         this.actions.get('open').setEnabled(enabled || Graph.fileSupport);
                         this.actions.get('import').setEnabled(enabled || Graph.fileSupport);
 
-                        //this.actions.get('save').setEnabled(enabled);
-                        //this.actions.get('saveAs').setEnabled(enabled);
+                        this.actions.get('save').setEnabled(enabled);
+                        this.actions.get('saveAs').setEnabled(enabled);
 
                         this.actions.get('export').setEnabled(enabled);
 
                     }));
-                }
-
-                // always off
-                this.actions.get('export').setEnabled(false);
-                this.actions.get('close').setEnabled(false);
-
-                //always on
-                // TODO wtf localhost??
-                this.actions.get('save').setEnabled(true);
-                this.actions.get('saveAs').setEnabled(true);
-
-                // force shutdown depending on trello ux
-                if(trello){
-                    this.actions.get('open').setEnabled(false);
-                    this.actions.get('close').setEnabled(true);
                 }
 
             };
