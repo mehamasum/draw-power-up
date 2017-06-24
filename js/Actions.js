@@ -93,7 +93,9 @@ Actions.prototype.init = function()
         console.log("close from editor-iframe");
 		if(editor.trello)
         	window.parent.closeOverlay(null);
-	}, null, null);
+	}, null, null).isEnabled = function () {
+		return editor.trello;
+	};
 
 	// Edit actions
 	this.addAction('undo', function() { ui.undo(); }, null, 'sprite-undo', 'Ctrl+Z');
