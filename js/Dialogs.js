@@ -1731,7 +1731,9 @@ var UrlAttachDialog = function(editorUi)
 	textarea.style.height = '150px';
 	textarea.style.marginBottom = '16px';
 
-	var xml = editorUi.editor.getGraphXml();
+
+
+	var xml = mxUtils.getXml(editorUi.editor.getGraphXml());
 	textarea.value = makeDrawUrl({xml: xml, name: editorUi.editor.getOrCreateFilename()});
 
 	div.appendChild(textarea);
