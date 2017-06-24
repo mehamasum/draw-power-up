@@ -42,15 +42,11 @@ var getBadges = function (t) {
             }
 
             if (cnt > 0) {
-                var badgeColor = 'orange';
-                var icon = WHITE_ICON;
-                var text = (cnt == 1) ? "1 Drawing" : cnt + " Drawings";
-
                 // return an array of badge objects
                 return [{
-                    text: text,
-                    icon: icon, // for card front badges only
-                    color: badgeColor
+                    text: cnt,
+                    icon: WHITE_ICON, // for card front badges only
+                    color: 'yellow'
                 }];
             } else {
                 return [];
