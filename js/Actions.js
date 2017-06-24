@@ -40,7 +40,9 @@ Actions.prototype.init = function()
 		window.openKey = 'open';
 		
 		ui.openFile();
-	});
+	}).isEnabled = function () {
+		return !editor.trello;
+	};
 	this.addAction('import...', function()
 	{
 		window.openNew = false;
