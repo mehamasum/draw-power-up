@@ -38,16 +38,23 @@
 		}
 
 		.closer {
+			text-align: center;
+			width: 30px;
 			position: absolute;
 			display: block;
 			right: 0px;
-			top: 8px;
+			top: 0px;
 			cursor: pointer;
-			margin-top: 1px;
-			margin-right: 17px;
+			margin-top: 0px;
+			margin-right: 0px;
 			border: 1px solid transparent;
 			padding: 1px;
-			opacity: 1.0;
+			background: rgba(255, 8, 1, 0.5);
+			color: white;
+		}
+
+		.closer:hover {
+			background: rgba(255, 8, 1, 1.0);
 		}
 
 		.tip {
@@ -55,7 +62,7 @@
 			font-size: 0.8em;
 			display: block;
 			margin-top: 4px;
-			margin-right: 37px;
+			margin-right: 47px;
 			border: 1px solid transparent;
 			padding: 1px;
 			opacity: 1.0;
@@ -83,14 +90,16 @@
 
 
 	var t = TrelloPowerUp.iframe();
-	window.closeOverlay = function (arg) {
-		console.log("close from index");
-		t.closeOverlay().done();
-	};
-
 	window.permit = function () {
 		if(t.args[0].context) return true;
 		else return false;
+	};
+
+	window.closeOverlay = function (arg) {
+		if (confirm("Sure to exit?") && window.permit()) {
+			console.log("close from index");
+			t.closeOverlay().done();
+		}
 	};
 
 	window.attachLink = function (arg) {
@@ -131,9 +140,7 @@
 	{
 		holder.append('<div class="bar">' +
 				'<div><span class="tip">To save this drawing: <span class="highlighter">File>Attach to card</span></span></div>' +
-				'<img class="closer" border="0" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJAQMAAADaX5RTAAAABlBMVEV7mr3///+wksspAAAAAnRSTlP/AOW3MEoAAAAdSURBVAgdY9jXwCDDwNDRwHCwgeExmASygSL7GgB12QiqNHZZIwAAAABJRU5ErkJggg==" ' +
-				'title="Close"'+
-				'onclick="javascript:window.closeOverlay()"></div>');
+				'<span class="closer" title="Close" onclick="javascript:window.closeOverlay()">X</span>');
 	}
 
 </script>
