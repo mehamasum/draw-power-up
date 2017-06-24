@@ -306,7 +306,7 @@ TrelloPowerUp.initialize({
     'card-badges': function (t, card) {
         console.log('card-badges');
         //console.log(JSON.stringify(t));
-        console.log(JSON.stringify(card));
+        //console.log(JSON.stringify(card));
         return getBadges(t);
     },
 
