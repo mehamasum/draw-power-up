@@ -533,12 +533,18 @@
             margin-right: 5px;
         }
     </style>
+
+    <!-- jQuery -->
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="u-gutter">
     <div class="u-clearfix">
         <div class="attachment-thumbnail">
-            <a class="attachment-thumbnail-preview" href="do" target="_blank">
+            <a class="attachment-thumbnail-preview js-opener" href="#" target="_blank">
                 <span class="attachment-thumbnail-preview-power-up-logo">
                     <img class="attachment-thumbnail-preview-power-up-logo-image"
                          src="https://mehamasum.github.io/draw-power-up/powerup/images/icon-gray.svg?color=999">
@@ -642,6 +648,33 @@
 
     </div>
 </div>
+
+<script>
+
+    function openDrawing(url, name) {
+        console.log("openDrawing: "+ url +" , "+ name);
+    }
+
+    function saveDrawing(url, name) {
+        console.log("saveDrawing: "+ url +" , "+ name);
+    }
+
+    $(".js-opener" ).click(function(event) {
+        event.preventDefault();
+        console.log(">>>>>>>>>>>>opener!!>>>>>>>>>>>");
+        var item = $(this);
+        openDrawing(item.data("url"), item.data("name"));
+    });
+
+    $(".js-saver" ).click(function(event) {
+        event.preventDefault();
+        console.log(">>>>>>>>>>>>saver!!>>>>>>>>>>>");
+        var item = $(this);
+        saveDrawing(item.data("url"), item.data("name"));
+    });
+
+
+</script>
 
 </body>
 </html>
