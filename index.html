@@ -91,12 +91,11 @@
 
 	var t = TrelloPowerUp.iframe();
 	window.permit = function () {
-		if(t.args[0].context) return true;
-		else return false;
+		return t.args[0].context;
 	};
 
 	window.closeOverlay = function (arg) {
-		if (confirm("Sure to exit?") && window.permit()) {
+		if (window.permit()) {
 			console.log("close from index");
 			t.closeOverlay().done();
 		}

@@ -44959,7 +44959,7 @@ mxStylesheet.prototype.createDefaultVertexStyle = function()
 	style[mxConstants.STYLE_PERIMETER] = mxPerimeter.RectanglePerimeter;
 	style[mxConstants.STYLE_VERTICAL_ALIGN] = mxConstants.ALIGN_MIDDLE;
 	style[mxConstants.STYLE_ALIGN] = mxConstants.ALIGN_CENTER;
-	style[mxConstants.STYLE_FILLCOLOR] = '#C3D9FF';
+	style[mxConstants.STYLE_FILLCOLOR] = '#FFFFFF';
 	style[mxConstants.STYLE_STROKECOLOR] = '#6482B9';
 	style[mxConstants.STYLE_FONTCOLOR] = '#774400';
 	
