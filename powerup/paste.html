@@ -23,17 +23,18 @@
         var link = document.getElementById('link').value;
 
         var name = formatDrawUrl(t, link);
-        if(!name) name = link;
-        const canEdit = t.args[0].context.permissions.card === 'write';
+        if(name) {
+            const canEdit = t.args[0].context.permissions.card === 'write';
 
-        if(canEdit) {
-            t.attach({url: link, name: name})
-                    .then(function () {
-                        t.closePopup().done();
-                    })
-        }
-        else {
-            t.closePopup().done();
+            if(canEdit) {
+                t.attach({url: link, name: name})
+                        .then(function () {
+                            t.closePopup().done();
+                        })
+            }
+            else {
+                t.closePopup().done();
+            }
         }
     })
 
