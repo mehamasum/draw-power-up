@@ -552,6 +552,9 @@
       var t = TrelloPowerUp.iframe();
 
       function attachToHtml(list) {
+
+        list = list.reverse();
+
         var toAttch = document.getElementById('attached-list');
         toAttch.innerHTML = "";
 
