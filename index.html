@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Draw in Trello | External Editor</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
 	<link rel="stylesheet" href="https://trello.com/power-ups/power-up.css">
 	<script src="https://trello.com/power-ups/power-up.min.js"></script>
 	<script src="powerup/js/powerup-util.js"></script>
@@ -30,6 +34,12 @@
 			top:0;
 			right:0;
 			height:40px;
+		}
+
+		.anim{
+			position:absolute;
+			top: calc(50% - 100px);
+			left: calc(50% - 100px);
 		}
 
 		iframe {
@@ -141,12 +151,19 @@
 	var holder = $(".holder");
 	holder.append(iframeHtml);
 
-	if(window.permit())
+	//if(window.permit())
 	{
 		holder.append('<div class="bar">' +
 				'<div><span class="tip">To save <span class="highlighter">File>Attach to Card</span></span></div>' +
 				'<span class="closer" title="Close" onclick="javascript:window.closeOverlay()">X</span>');
 	}
+
+
+	holder.append('<div style="display: none" class="anim"><img width="200" height="200" src="powerup/images/icon.svg"></div>');
+	$(".anim").fadeIn();
+	setTimeout(function () {
+		$(".anim").fadeOut();
+	}, 4000);
 
 </script>
 
