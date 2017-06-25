@@ -91,7 +91,13 @@
 
 	var t = TrelloPowerUp.iframe();
 	window.permit = function () {
-		return t.args[0].context;
+		try {
+			var perm = t.args[0].context.permissions.card;
+			return true;
+		}
+		catch (e) {
+			return false;
+		}
 	};
 
 	window.closeOverlay = function (arg) {
