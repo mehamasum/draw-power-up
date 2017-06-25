@@ -1716,7 +1716,7 @@ var UrlAttachDialog = function(editorUi)
 	div.appendChild(instruction);
 
 	var instruction2 = document.createElement('h3');
-	instruction2.innerHTML = "Draw in Trello Power Up > Attach From Url";
+	instruction2.innerHTML = "Draw in Trello Power Up > Attach From Link";
 	instruction2.style.marginBottom = '16px';
 	div.appendChild(instruction2);
 
