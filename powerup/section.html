@@ -622,14 +622,14 @@
 
         $(".js-opener" ).click(function(event) {
           event.preventDefault();
-          console.log(">>>>>>>>>>>>opener!!>>>>>>>>>>>");
+          //console.log(">>>>>>>>>>>>opener!!>>>>>>>>>>>");
           var item = $(this);
           openDrawing(item.data("url"), item.data("name"));
         });
 
         $(".js-saver" ).click(function(event) {
           event.preventDefault();
-          console.log(">>>>>>>>>>>>saver!!>>>>>>>>>>>");
+          //console.log(">>>>>>>>>>>>saver!!>>>>>>>>>>>");
           var item = $(this);
           saveDrawing(item.data("url"), item.data("name"));
         });
@@ -637,7 +637,6 @@
       }
 
       function openDrawing(url, name) {
-        console.log("openDrawing: "+ url +" , "+ name);
 
         // this name is already decoded
         return t.overlay({
@@ -647,7 +646,6 @@
       }
 
       function saveDrawing(url, name) {
-        console.log("saveDrawing: "+ url +" , "+ name);
         var element = document.createElement('a');
         element.setAttribute('href', 'data:text/xml;charset=utf-8,' + extractXML(url));
         element.setAttribute('download', name);
@@ -677,7 +675,6 @@
       t.sizeTo('#content');
 
       t.render(function(){
-        console.log("rendering section!!!");
 
         // make sure your rendering logic lives here, since we will
         // recall this method as the user adds and removes attachments

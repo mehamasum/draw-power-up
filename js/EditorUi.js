@@ -3321,7 +3321,6 @@ EditorUi.prototype.attach = function(name)
 		{
 			if (xml.length < MAX_REQUEST_SIZE)
 			{
-				console.log("attach from editor-iframe");
 				window.parent.attachLink({xml: xml, name: name});
 			}
 			else

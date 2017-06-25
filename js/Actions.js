@@ -92,7 +92,6 @@ Actions.prototype.init = function()
 	this.addAction('preview', function() { mxUtils.show(graph, null, 10, 10); });
 
 	this.addAction('close', function () {
-        console.log("close from editor-iframe");
 		if(editor.trello)
         	window.parent.closeOverlay(null);
 	}, null, null).isEnabled = function () {
