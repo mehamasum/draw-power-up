@@ -1,0 +1,42 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://trello.com/power-ups/power-up.css">
+    <script src="https://trello.com/power-ups/power-up.min.js"></script>
+    <script src="js/powerup-util.js"></script>
+
+</head>
+<body>
+<div id="content">
+    <p>Paste the Link generated from the <a href="https://mehamasum.github.io/draw-power-up/editor.html">External Editor</a></p>
+    <textarea id="link"></textarea>
+    <button id="save" class="mod-primary">Attach</button>
+</div>
+
+<script>
+    /* global TrelloPowerUp */
+    var Promise = TrelloPowerUp.Promise;
+    var t = TrelloPowerUp.iframe();
+    t.sizeTo('#content');
+
+    document.getElementById('save').addEventListener('click', function(){
+
+        var link = document.getElementById('link').value;
+
+        var name = formatDrawUrl(t, link);
+        if(!name) name = link;
+        const canEdit = t.args[0].context.permissions.card === 'write';
+
+        if(canEdit) {
+            t.attach({url: link, name: name})
+                    .then(function () {
+                        t.closePopup().done();
+                    })
+        }
+        else {
+            t.closePopup().done();
+        }
+    })
+
+</script>
+</body>
+</html>

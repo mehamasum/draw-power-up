@@ -103,7 +103,7 @@
 
 	window.attachLink = function (arg) {
 
-		const canEdit = t.args[0].context.permissions.board === 'write';
+		const canEdit = t.args[0].context.permissions.card === 'write';
 
 		if(canEdit) {
 			console.log("attach from index");
