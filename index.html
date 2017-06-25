@@ -112,7 +112,7 @@
 
 	window.closeOverlay = function (arg) {
 		if (window.permit()) {
-			console.log("close from index");
+			//console.log("close from index");
 			t.closeOverlay().done();
 		}
 	};
@@ -122,7 +122,7 @@
 		const canEdit = t.args[0].context.permissions.card === 'write';
 
 		if(canEdit) {
-			console.log("attach from index");
+			//console.log("attach from index");
 			var url = makeDrawUrl(arg);
 
 			t.attach({url: url, name: arg.name})
