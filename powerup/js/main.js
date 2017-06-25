@@ -62,11 +62,17 @@ var cardButtonCallback = function (t) {
 
 TrelloPowerUp.initialize({
     'card-buttons': function (t, options) {
-        return [{
-            icon: GRAY_ICON,
-            text: 'Draw in Trello',
-            callback: cardButtonCallback
-        }];
+        const canEdit = t.args[0].context.permissions.card === 'write';
+        if(canEdit) {
+            return [{
+                icon: GRAY_ICON,
+                text: 'Draw in Trello',
+                callback: cardButtonCallback
+            }];
+        }
+        else {
+            return [];
+        }
     },
     'attachment-sections': function (t, options) {
         var claimed = options.entries.filter(drawFilter);
