@@ -9,6 +9,8 @@
 <head>
     <title>Codec example for mxGraph</title>
 
+    <link rel="stylesheet" href="https://trello.com/power-ups/power-up.css">
+
     <!-- Sets the basepath for the library if not in same directory -->
     <script type="text/javascript">
         mxBasePath = 'source/src';
@@ -24,6 +26,8 @@
         function preview(preview_window, xml)
         {
             var container = document.createElement("div");
+            container.style.width = preview_window.style.width;
+            container.style.height = preview_window.style.height;
             var xmlDocument = mxUtils.parseXml(xml);
 
             if (xmlDocument.documentElement != null && xmlDocument.documentElement.nodeName == 'mxGraphModel')
@@ -61,7 +65,7 @@
                 decoder.decode(node, graph.getModel());
                 graph.resizeContainer = false;
 
-                // Adds zoom buttons in top, left corner
+                /*// Adds zoom buttons in top, left corner
                 var buttons = document.createElement('div');
                 buttons.style.position = 'absolute';
                 buttons.style.overflow = 'visible';
@@ -123,7 +127,7 @@
                 else
                 {
                     container.appendChild(buttons);
-                }
+                }*/
             }
 
             preview_window.innerHTML = "";
@@ -145,12 +149,58 @@
             }
         }
     </script>
+
+
+    <style>
+        .menu-dropdown {
+            border: 0;
+            border-radius: 3px;
+            box-shadow: 0 2px 0 #959DA1;
+            background: #eeeeee;
+            color: #4d4d4d;
+            font-size: inherit;
+            font-weight: 700!important;
+            vertical-align: baseline;
+            margin: .3em 1em 1em 0;
+            outline: 0;
+            padding: .6em 1.4em;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .menu-alias {
+
+        }
+    </style>
+
 </head>
 <body>
 <!-- Contains a graph description which will be converted. -->
-<div id="preview-window"
-     style="width:200px; height: 200px; position:relative;overflow:hidden;border:1px solid gray;">
+
+<div>
+    <select class="menu-dropdown">
+        <option value="acting">Acting</option>
+        <option value="zoology">Animals</option>
+        <option value="art">Art</option>
+        <option value="astronomy">Astronomy</option>
+    </select>
+
+    <div id="preview-window"
+         style="width:200px; height: 150px;
+         position:relative;overflow:hidden;border:1px solid gray;
+                border-radius: 3px;">
+    </div>
+
+    <button class="menu-alias mod-primary">
+        Open Drawing
+    </button>
+
+    <button class="menu-alias">
+        Download XML
+    </button>
 </div>
+
+
 <script type="text/javascript">
     main();
 </script>

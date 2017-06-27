@@ -83,7 +83,7 @@ TrelloPowerUp.initialize({
                 title: 'Attached Drawings',
                 content: {
                     type: 'iframe',
-                    url: t.signUrl('./section.html', {arg: claimed}),
+                    url: t.signUrl('./section2.html', {arg: claimed}),
                     height: 230
                 }
             }];

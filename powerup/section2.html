@@ -1,0 +1,746 @@
+<html>
+<head>
+    <!--<link rel="stylesheet" href="./css/core.css">-->
+    <link rel="stylesheet" href="https://trello.com/power-ups/power-up.css">
+    <style>
+        html {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%
+        }
+
+        body {
+            margin: 0
+        }
+
+        article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary {
+            display: block
+        }
+
+        audio,canvas,progress,video {
+            display: inline-block;
+            vertical-align: baseline
+        }
+
+        audio:not([controls]) {
+            display: none;
+            height: 0
+        }
+
+        [hidden],template {
+            display: none
+        }
+
+        a {
+            background-color: transparent
+        }
+
+        a:active,a:hover {
+            outline: 0
+        }
+
+        abbr[title] {
+            border-bottom: 1px dotted
+        }
+
+        b,optgroup,strong {
+            font-weight: 700
+        }
+
+        dfn {
+            font-style: italic
+        }
+
+        mark {
+            background: #ff0;
+            color: #000
+        }
+
+        small {
+            font-size: 80%
+        }
+
+        sub,sup {
+            font-size: 75%;
+            line-height: 0;
+            vertical-align: baseline
+        }
+
+        sup {
+            top: -.5em
+        }
+
+        sub {
+            bottom: -.25em
+        }
+
+        svg:not(:root) {
+            overflow: hidden
+        }
+
+        figure {
+            margin: 1em 40px
+        }
+
+        hr {
+            -moz-box-sizing: content-box;
+            box-sizing: content-box
+        }
+
+        pre,textarea {
+            overflow: auto
+        }
+
+        code,kbd,pre,samp {
+            font-family: monospace,monospace;
+            font-size: 1em
+        }
+
+        button,input,optgroup,select,textarea {
+            color: inherit;
+            font: inherit;
+            margin: 0
+        }
+
+        button {
+            overflow: visible
+        }
+
+        button,select {
+            text-transform: none
+        }
+
+        button,html input[type=button],input[type=reset],input[type=submit] {
+            -webkit-appearance: button;
+            cursor: pointer
+        }
+
+        button[disabled],html input[disabled] {
+            cursor: default
+        }
+
+        button::-moz-focus-inner,input::-moz-focus-inner {
+            border: 0;
+            padding: 0
+        }
+
+        input[type=checkbox],input[type=radio] {
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 0
+        }
+
+        input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {
+            height: auto
+        }
+
+        input[type=search] {
+            -webkit-appearance: textfield;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box
+        }
+
+        input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration {
+            -webkit-appearance: none
+        }
+
+        fieldset {
+            margin: 0 2px
+        }
+
+        legend {
+            padding: 0
+        }
+
+        .button-link,.quiet-button {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none
+        }
+
+        .u-gutter {
+            margin-left: 38px
+        }
+        .u-clearfix:after,pre:after {
+            content: "";
+            clear: both
+        }
+        .u-clearfix:after {
+            display: table
+        }
+        .attachment-thumbnail,.phenom,img {
+            page-break-before: auto;
+            page-break-after: auto;
+            page-break-inside: avoid;
+            position: relative
+        }
+
+        .attachment-thumbnail {
+            height: 155px;
+            border-radius: 3px;
+            min-height: 5pc;
+            margin: 0 0 8px;
+            overflow: hidden;
+            position: relative
+        }
+
+        .attachment-thumbnail.placeholder {
+            background: #D6DADC;
+            border-radius: 3px
+        }
+
+        .attachment-thumbnail.ui-sortable-helper,.attachment-thumbnail:hover .attachment-thumbnail-details {
+            background-color: #E2E4E6
+        }
+
+        .attachment-thumbnail:hover .attachment-thumbnail-preview {
+            background-color: #D6DADC;
+            border-color: #D6DADC
+        }
+
+        .attachment-thumbnail-processing {
+            background-color: #E2E4E6;
+            color: #8c8c8c;
+            line-height: 5pc;
+            text-align: center
+        }
+
+        .attachment-thumbnail-processing .spinner {
+            display: inline-block;
+            -webkit-transform: translateY(3px);
+            transform: translateY(3px)
+        }
+
+        .attachment-thumbnail-preview {
+            background-color: #edeff0;
+            border: 1px solid #D6DADC;
+            overflow:hidden;
+            border-radius: 3px;
+            position: absolute;
+            left: 0;
+            text-align: center;
+            text-decoration: none;
+            z-index: 0;
+            width: 200px;
+            height: 150px;
+        }
+
+        .attachment-thumbnail-preview-power-up-logo {
+            display: table-cell;
+            width: 250px;
+            height: 150px;
+            text-align: center;
+            vertical-align: middle
+        }
+
+        .attachment-thumbnail-preview-power-up-logo-image {
+            height: 45px;
+            width: 45px
+        }
+
+        .attachment-thumbnail-preview-service-logo {
+            background-size: 70px 70px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            display: block;
+            height: 5pc;
+            width: 81pt
+        }
+
+        .attachment-thumbnail-preview-ext {
+            color: #8c8c8c;
+            display: block;
+            font-size: 18px;
+            font-weight: 700;
+            height: 100%;
+            line-height: 5pc;
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: none;
+            width: 100%
+        }
+
+        .attachment-thumbnail-preview-ext:hover {
+            color: #8c8c8c
+        }
+
+        .attachment-thumbnail-preview-attachment-icon {
+            line-height: 5pc
+        }
+
+        .attachment-thumbnail-details {
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            cursor: pointer;
+            padding: 8px 8px 8px 90pt;
+            min-height: 5pc;
+            margin-left: 100px;
+            height: 152px;
+        }
+
+        .attachment-thumbnail-details.attachment-renamable .attachment-thumbnail-name {
+            display: block;
+            line-height: 20px;
+            padding: 2px 0;
+            word-wrap: break-word
+        }
+
+        .attachment-thumbnail-details.attachment-renamable .attachment-thumbnail-name.hide {
+            display: none
+        }
+
+        .attachment-thumbnail-details.attachment-renamable .attachment-thumbnail-details-title {
+            background: 0 0;
+            border-radius: 2px;
+            border: 0;
+            line-height: 20px;
+            margin: 0 0 0 -2px;
+            min-height: 20px;
+            padding: 2px;
+            resize: none
+        }
+
+        .attachment-thumbnail-details.attachment-renamable .attachment-thumbnail-details-title:focus {
+            background-color: rgba(255,255,255,.9);
+            border-color: #298FCA;
+            box-shadow: 0 0 2px #298FCA
+        }
+
+        .attachment-thumbnail-details.attachment-renamable textarea.attachment-thumbnail-details-title {
+            height: 20px
+        }
+
+        .attachment-thumbnail-details-title {
+            display: block;
+            text-decoration: none;
+            margin-bottom: 6px;
+            word-wrap: break-word
+        }
+
+        .attachment-thumbnail-details-title:hover {
+            color: inherit
+        }
+
+        .attachment-thumbnail-details-options-item {
+            border-radius: 3px;
+            margin-right: 8px;
+            text-decoration: none
+        }
+
+        .attachment-thumbnail-details-options-item-text {
+            margin-left: -3px;
+            text-decoration: underline
+        }
+
+        .attatchment-thumbnail-details-powerup {
+            display: inline-block;
+            width: 100%
+        }
+
+        body,button,html,input,select,textarea {
+            color: #4d4d4d;
+            font: 14px "Helvetica Neue",Arial,Helvetica,sans-serif;
+            line-height: 18px
+        }
+
+        h1,h2 {
+            line-height: 1.2em
+        }
+
+        h1 {
+            font-size: 22px;
+            margin: 0 0 10px
+        }
+
+        h2 {
+            font-size: 18px;
+            margin: 0 0 9px
+        }
+
+        h3,h4,h5,h6 {
+            font-size: 1pc;
+            line-height: 1.25em;
+            margin: 0 0 6px
+        }
+
+        hr {
+            background: #D6DADC;
+            border: 0;
+            color: #D6DADC;
+            height: 1px;
+            margin: 9pt 0;
+            width: 100%
+        }
+
+        a {
+            color: #444
+        }
+
+        a:hover {
+            color: #111
+        }
+
+        a.disabled,a.disabled:hover {
+            color: #8c8c8c;
+            cursor: default;
+            text-decoration: none
+        }
+
+        p {
+            margin: 0 0 8px
+        }
+
+        div::-moz-selection {
+            background: 0 0
+        }
+
+        div::selection {
+            background: 0 0
+        }
+
+        pre {
+            border-radius: 2px;
+            border: 1px solid #D6DADC;
+            margin: 8px 0;
+            padding: 8px 10px;
+            word-wrap: normal
+        }
+
+        pre::-webkit-scrollbar {
+            height: 9px;
+            width: 9px
+        }
+
+        pre::-webkit-scrollbar-button:end:increment,pre::-webkit-scrollbar-button:start:decrement {
+            background: 0 0;
+            display: none
+        }
+
+        pre::-webkit-scrollbar-track-piece {
+            background: #E2E4E6
+        }
+
+        pre::-webkit-scrollbar-track-piece:vertical:start {
+            border-radius: 5px 5px 0 0
+        }
+
+        pre::-webkit-scrollbar-track-piece:vertical:end {
+            border-radius: 0 0 5px 5px
+        }
+
+        pre::-webkit-scrollbar-track-piece:horizontal:start {
+            border-radius: 5px 0 0 5px
+        }
+
+        pre::-webkit-scrollbar-track-piece:horizontal:end {
+            border-radius: 0 5px 5px 0
+        }
+
+        pre::-webkit-scrollbar-thumb:horizontal,pre::-webkit-scrollbar-thumb:vertical {
+            background: #CDD2D4;
+            border-radius: 5px;
+            display: block;
+            height: 50px
+        }
+
+        pre:after {
+            display: table
+        }
+
+        code {
+            border: 1px solid #D6DADC;
+            border-radius: 2px;
+            color: #EB5A46;
+            padding: 1px 3px;
+            margin: -1px 2px
+        }
+
+        pre code {
+            background-color: none;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            color: #4d4d4d;
+            margin: 0
+        }
+
+        code,pre,tt {
+            font-family: 'bitstream vera sans mono','andale mono','lucida console',monospace;
+            line-height: 1.25em
+        }
+
+        blockquote {
+            border-left: 1px solid #C4C9CC;
+            color: #666;
+            margin: 8px 0 8px 8px;
+            padding: 0 0 0 8px
+        }
+
+        ol,ul {
+            list-style: none;
+            margin: 0
+        }
+
+        .quiet,.quiet a {
+            color: #8c8c8c
+        }
+
+        .quiet a:not(.disabled):hover {
+            color: #4d4d4d
+        }
+
+
+        .give-me-space {
+            height: 18px;
+            line-height: 18px;
+            width: 18px;
+            padding-right: 7px;
+        }
+    </style>
+
+
+    <script src="https://trello.com/power-ups/power-up.min.js"></script>
+    <script src="js/powerup-util.js"></script>
+
+
+    <!-- Sets the basepath for the library if not in same directory -->
+    <script type="text/javascript">
+        mxBasePath = '../source/src';
+    </script>
+    <!-- Loads and initializes the library -->
+    <script type="text/javascript" src="../source/mxClient.min.js"></script>
+
+
+    <!-- jQuery -->
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="content">
+    <div class="u-clearfix" id="attached-list">
+    </div>
+</div>
+
+
+<script>
+
+    /* global TrelloPowerUp */
+    var t = TrelloPowerUp.iframe();
+
+    function previewRender(preview_window, url)
+    {
+        var container = document.createElement("div");
+        container.style.width = 200;
+        container.style.height = 150;
+
+        var xml = extractXML(url);
+        var xmlDocument = mxUtils.parseXml(xml);
+
+        if (xmlDocument.documentElement != null && xmlDocument.documentElement.nodeName == 'mxGraphModel')
+        {
+            var decoder = new mxCodec(xmlDocument);
+            var node = xmlDocument.documentElement;
+
+            container.innerHTML = '';
+
+            var graph = new mxGraph(container);
+            graph.centerZoom = false;
+            graph.setTooltips(false);
+            graph.setEnabled(false);
+
+            // Changes the default style for edges "in-place"
+            var style = graph.getStylesheet().getDefaultEdgeStyle();
+            style[mxConstants.STYLE_EDGE] = mxEdgeStyle.ElbowConnector;
+
+            // Enables panning with left mouse button
+            graph.panningHandler.useLeftButtonForPanning = true;
+            graph.panningHandler.ignoreCell = true;
+            graph.container.style.cursor = 'move';
+            graph.setPanning(true);
+
+            if (container.style.width == '' && container.style.height == '')
+            {
+                graph.resizeContainer = true;
+            }
+            else
+            {
+                // Adds border for fixed size boxes
+                graph.border = 20;
+            }
+
+
+
+            decoder.decode(node, graph.getModel());
+            graph.resizeContainer = false;
+
+            for(var k=0; k<7; k++)
+                graph.zoomOut();
+
+
+            console.log(">> "+ container.innerHTML);
+            //return container.innerHTML;
+            preview_window.innerHTML = "";
+            preview_window.appendChild(container);
+        }
+
+
+
+    }
+
+    function openDrawing(url, name) {
+
+        // this name is already decoded
+        return t.overlay({
+            url: './../index.html',
+            args: {url: url, name: name}
+        });
+    }
+
+    function saveDrawing(url, name) {
+        var element = document.createElement('a');
+        element.setAttribute('href', 'data:text/xml;charset=utf-8,' + extractXML(url));
+        element.setAttribute('download', name);
+
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+    }
+
+
+    function attachToHtml(list) {
+
+        list = list.reverse();
+
+        var toAttch = document.getElementById('attached-list');
+        toAttch.innerHTML = "";
+
+        var size = list.length;
+
+        for(var i=0; i<size; i++) {
+
+            var itemUrl = list[i]['url'];
+
+            // var itemName = list[i]['name'];
+            // not picking the name from what i have been given
+            // bad ux when trello built attachment
+            var itemName = formatDrawUrl(null, list[i]['url']);
+
+            var div = document.createElement('div');
+            div.className = "attachment-thumbnail";
+
+            var preview = document.createElement('div');
+            preview.className = "attachment-thumbnail-preview js-thumbnail";
+            preview.setAttribute('data-url', itemUrl);
+            preview.setAttribute('data-name', itemName);
+            preview.innerHTML='<span class="attachment-thumbnail-preview-power-up-logo">'+
+                    '<img class="attachment-thumbnail-preview-power-up-logo-image"'+
+                    ' src="https://mehamasum.github.io/draw-power-up/powerup/images/icon-gray.svg?color=999">'+
+                    '</span>';
+            div.appendChild(preview);
+
+            var details = document.createElement('p');
+            details.className = "attachment-thumbnail-details attachment-renamable";
+
+            var span1 = document.createElement('span');
+            span1.innerHTML = itemName;
+            details.appendChild(span1);
+
+            var span2 = document.createElement('span');
+            span2.className = "attachment-thumbnail-details-title";
+            details.appendChild(span2);
+
+            var span3 = document.createElement('span');
+            span3.className = "quiet attachment-thumbnail-details-options";
+            span3.innerHTML = '<a class="attachment-thumbnail-details-options-item dark-hover js-opener" data-url=\"' +itemUrl+ '\" data-name=\"'+itemName+'\" href="#">'+
+                    '<span class="give-me-space">' +
+                    '<img width="12" height="12" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTQ0NC4yNTUsMjk3LjkxM2MtMTEuNDIzLDAtMjAuNjgyLDkuMjU5LTIwLjY4MiwyMC42ODJ2MTI1LjY2YzAsMTQuNTQ3LTExLjgzNSwyNi4zODEtMjYuMzgxLDI2LjM4MUg2Ny43NDYgICAgYy0xNC41NDcsMC0yNi4zODEtMTEuODM1LTI2LjM4MS0yNi4zODFWMTE0LjgxYzAtMTQuNTQ3LDExLjgzNS0yNi4zODEsMjYuMzgxLTI2LjM4MWgxMjUuNjZjMTEuNDIyLDAsMjAuNjgyLTkuMjYsMjAuNjgyLTIwLjY4MiAgICBzLTkuMjYtMjAuNjgyLTIwLjY4Mi0yMC42ODJINjcuNzQ2Yy0zNy4zNTUsMC02Ny43NDYsMzAuMzkxLTY3Ljc0Niw2Ny43NDZ2MzI5LjQ0NUMwLjAwMSw0ODEuNjA5LDMwLjM5Miw1MTIsNjcuNzQ2LDUxMmgzMjkuNDQ1ICAgIGMzNy4zNTUsMCw2Ny43NDYtMzAuMzkxLDY3Ljc0Ni02Ny43NDZ2LTEyNS42NkM0NjQuOTM3LDMwNy4xNzIsNDU1LjY3OCwyOTcuOTEzLDQ0NC4yNTUsMjk3LjkxM3oiIGZpbGw9IiM4YzhjOGMiLz4KCTwvZz4KPC9nPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik01MDUuOTQyLDEwMC4xODVMNDExLjgxNSw2LjA1OGMtOC4wNzctOC4wNzctMjEuMTcyLTguMDc3LTI5LjI0OSwwTDE0Ny4yNDksMjQxLjM3NiAgICBjLTMuODc4LDMuODc5LTYuMDU4LDkuMTQtNi4wNTgsMTQuNjI1djk0LjEyN2MwLDExLjQyMyw5LjI2LDIwLjY4MiwyMC42ODIsMjAuNjgyaDk0LjEyN2M1LjQ4NiwwLDEwLjc0Ni0yLjE3OSwxNC42MjQtNi4wNTcgICAgbDIzNS4zMTgtMjM1LjMxOWMzLjg3OS0zLjg3OSw2LjA1OC05LjE0LDYuMDU4LTE0LjYyNVM1MDkuODIxLDEwNC4wNjQsNTA1Ljk0MiwxMDAuMTg1eiBNMjQ3LjQzNCwzMjkuNDQ1aC02NC44Nzh2LTY0Ljg3OCAgICBMMzk3LjE5MSw0OS45MzJsNjQuODc4LDY0Ljg3OEwyNDcuNDM0LDMyOS40NDV6IiBmaWxsPSIjOGM4YzhjIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />'+
+                    '</span>'+
+                    '<span class="attachment-thumbnail-details-options-item-text">Open Drawing</span>'+
+                    '</a>';
+
+            span3.innerHTML += '<a class="attachment-thumbnail-details-options-item dark-hover js-saver" data-url=\"' +itemUrl+ '\" data-name=\"'+itemName+'\" href="#">'+
+                    '<span class="give-me-space">' +
+                    '<img width="12" height="12" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI5Ljk3OCAyOS45NzgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI5Ljk3OCAyOS45Nzg7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPGc+Cgk8cGF0aCBkPSJNMjUuNDYyLDE5LjEwNXY2Ljg0OEg0LjUxNXYtNi44NDhIMC40ODl2OC44NjFjMCwxLjExMSwwLjksMi4wMTIsMi4wMTYsMi4wMTJoMjQuOTY3YzEuMTE1LDAsMi4wMTYtMC45LDIuMDE2LTIuMDEyICAgdi04Ljg2MUgyNS40NjJ6IiBmaWxsPSIjOGM4YzhjIi8+Cgk8cGF0aCBkPSJNMTQuNjIsMTguNDI2bC01Ljc2NC02Ljk2NWMwLDAtMC44NzctMC44MjgsMC4wNzQtMC44MjhzMy4yNDgsMCwzLjI0OCwwczAtMC41NTcsMC0xLjQxNmMwLTIuNDQ5LDAtNi45MDYsMC04LjcyMyAgIGMwLDAtMC4xMjktMC40OTQsMC42MTUtMC40OTRjMC43NSwwLDQuMDM1LDAsNC41NzIsMGMwLjUzNiwwLDAuNTI0LDAuNDE2LDAuNTI0LDAuNDE2YzAsMS43NjIsMCw2LjM3MywwLDguNzQyICAgYzAsMC43NjgsMCwxLjI2NiwwLDEuMjY2czEuODQyLDAsMi45OTgsMGMxLjE1NCwwLDAuMjg1LDAuODY3LDAuMjg1LDAuODY3cy00LjkwNCw2LjUxLTUuNTg4LDcuMTkzICAgQzE1LjA5MiwxOC45NzksMTQuNjIsMTguNDI2LDE0LjYyLDE4LjQyNnoiIGZpbGw9IiM4YzhjOGMiLz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />'+
+                    '</span>'+
+                    '<span class="attachment-thumbnail-details-options-item-text">Save as XML</span>'+
+                    '</a>';
+
+            details.appendChild(span3);
+
+            div.appendChild(details);
+
+
+            toAttch.appendChild(div);
+        }
+
+        $(".js-opener" ).click(function(event) {
+            event.preventDefault();
+            //console.log(">>>>>>>>>>>>opener!!>>>>>>>>>>>");
+            var item = $(this);
+            openDrawing(item.data("url"), item.data("name"));
+        });
+
+        $(".js-saver" ).click(function(event) {
+            event.preventDefault();
+            //console.log(">>>>>>>>>>>>saver!!>>>>>>>>>>>");
+            var item = $(this);
+            saveDrawing(item.data("url"), item.data("name"));
+        });
+
+        //$(".js-thumbnail").html();
+
+        if (mxClient.isBrowserSupported())
+        {
+            var divs = document.getElementsByClassName('js-thumbnail');
+
+            console.log(divs.length);
+
+            for (var j = 0; j < divs.length; j++)
+            {
+                previewRender(divs[j],  divs[j].getAttribute('data-url'));
+            }
+
+            //$(".js-thumbnail").html(previewRender($(this), $(this).data.url));
+        }
+
+    }
+
+    // you can access arguments passed to your iframe like so
+
+    var list = t.arg('arg');
+
+    var list =new Array(4);
+    for (var i = 0; i < 4; i++) {
+        list[i] = new Array(2);
+    }
+    list[0]['url']='https://mehamasum.github.io/draw-power-up/editor.html?xml=%3CmxGraphModel%20dx%3D%22600%22%20dy%3D%22442%22%20grid%3D%221%22%20gridSize%3D%2210%22%20guides%3D%221%22%20tooltips%3D%221%22%20connect%3D%221%22%20arrows%3D%221%22%20fold%3D%221%22%20page%3D%221%22%20pageScale%3D%221%22%20pageWidth%3D%22850%22%20pageHeight%3D%221100%22%20background%3D%22%23ffffff%22%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22%22%20style%3D%22ellipse%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22250%22%20y%3D%22160%22%20width%3D%22120%22%20height%3D%2280%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%223%22%20value%3D%22%22%20style%3D%22rhombus%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22140%22%20y%3D%2260%22%20width%3D%2280%22%20height%3D%2280%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%224%22%20value%3D%22%22%20style%3D%22rounded%3D1%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22365%22%20y%3D%22290%22%20width%3D%22120%22%20height%3D%2260%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%225%22%20value%3D%22%22%20style%3D%22shape%3Dcylinder%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22140%22%20y%3D%22300%22%20width%3D%2260%22%20height%3D%2280%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%226%22%20value%3D%22%22%20style%3D%22shape%3DinternalStorage%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22425%22%20y%3D%2260%22%20width%3D%2280%22%20height%3D%2280%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&filename=lots%20of%20things.xml';
+    list[1]['url']='https://mehamasum.github.io/draw-power-up/editor.html?xml=%3CmxGraphModel%20dx%3D%22600%22%20dy%3D%22442%22%20grid%3D%221%22%20gridSize%3D%2210%22%20guides%3D%221%22%20tooltips%3D%221%22%20connect%3D%221%22%20arrows%3D%221%22%20fold%3D%221%22%20page%3D%221%22%20pageScale%3D%221%22%20pageWidth%3D%22850%22%20pageHeight%3D%221100%22%20background%3D%22%23ffffff%22%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22%22%20style%3D%22shape%3Dcylinder%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%2260%22%20y%3D%22320%22%20width%3D%2260%22%20height%3D%2280%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%223%22%20value%3D%22%22%20style%3D%22shape%3Dtape%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22370%22%20y%3D%22140%22%20width%3D%22120%22%20height%3D%22100%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%224%22%20value%3D%22%22%20style%3D%22endArrow%3Dclassic%3Bhtml%3D1%3B%22%20edge%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%2260%22%20y%3D%22470%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22110%22%20y%3D%22420%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22340%22%20y%3D%22230%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&filename=Drawing%204.xml';
+    list[2]['url']='https://mehamasum.github.io/draw-power-up/editor.html?xml=%3CmxGraphModel%20dx%3D%22139%22%20dy%3D%22442%22%20grid%3D%221%22%20gridSize%3D%2210%22%20guides%3D%221%22%20tooltips%3D%221%22%20connect%3D%221%22%20arrows%3D%221%22%20fold%3D%221%22%20page%3D%221%22%20pageScale%3D%221%22%20pageWidth%3D%22850%22%20pageHeight%3D%221100%22%20background%3D%22%23ffffff%22%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22%22%20style%3D%22shape%3Dcylinder%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%2260%22%20y%3D%22320%22%20width%3D%2260%22%20height%3D%2280%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&filename=Drawing%203.xml';
+    list[3]['url']='https://mehamasum.github.io/draw-power-up/editor.html?xml=%3CmxGraphModel%20dx%3D%22600%22%20dy%3D%22486%22%20grid%3D%221%22%20gridSize%3D%2210%22%20guides%3D%221%22%20tooltips%3D%221%22%20connect%3D%221%22%20arrows%3D%221%22%20fold%3D%221%22%20page%3D%221%22%20pageScale%3D%221%22%20pageWidth%3D%22850%22%20pageHeight%3D%221100%22%20background%3D%22%23ffffff%22%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22%22%20style%3D%22ellipse%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22240%22%20y%3D%22150%22%20width%3D%22120%22%20height%3D%2280%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%223%22%20value%3D%221%22%20style%3D%22text%3Bhtml%3D1%3BstrokeColor%3Dnone%3BfillColor%3Dnone%3Balign%3Dcenter%3BverticalAlign%3Dmiddle%3BwhiteSpace%3Dwrap%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22280%22%20y%3D%22180%22%20width%3D%2240%22%20height%3D%2220%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%224%22%20value%3D%22%22%20style%3D%22ellipse%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22240%22%20y%3D%22280%22%20width%3D%22120%22%20height%3D%2280%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%225%22%20value%3D%222%22%20style%3D%22text%3Bhtml%3D1%3BstrokeColor%3Dnone%3BfillColor%3Dnone%3Balign%3Dcenter%3BverticalAlign%3Dmiddle%3BwhiteSpace%3Dwrap%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22280%22%20y%3D%22310%22%20width%3D%2240%22%20height%3D%2220%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&filename=Drawing%20version2.xml';
+
+    attachToHtml(list);
+    /*t.sizeTo('#content');
+
+     t.render(function(){
+
+     // make sure your rendering logic lives here, since we will
+     // recall this method as the user adds and removes attachments
+     // from your section
+     t.card('attachments')
+     .get('attachments')
+     .filter(drawFilter)
+     .then(function(list){
+     attachToHtml(list);
+     })
+     .then(function(){
+     return t.sizeTo('#content');
+     });
+     });*/
+
+
+
+</script>
+</body>
+</html>

@@ -44960,7 +44960,7 @@ mxStylesheet.prototype.createDefaultVertexStyle = function()
 	style[mxConstants.STYLE_VERTICAL_ALIGN] = mxConstants.ALIGN_MIDDLE;
 	style[mxConstants.STYLE_ALIGN] = mxConstants.ALIGN_CENTER;
 	style[mxConstants.STYLE_FILLCOLOR] = '#FFFFFF';
-	style[mxConstants.STYLE_STROKECOLOR] = '#6482B9';
+	style[mxConstants.STYLE_STROKECOLOR] = '#555555';
 	style[mxConstants.STYLE_FONTCOLOR] = '#774400';
 	
 	return style;
@@ -44979,7 +44979,7 @@ mxStylesheet.prototype.createDefaultEdgeStyle = function()
 	style[mxConstants.STYLE_ENDARROW] = mxConstants.ARROW_CLASSIC;
 	style[mxConstants.STYLE_VERTICAL_ALIGN] = mxConstants.ALIGN_MIDDLE;
 	style[mxConstants.STYLE_ALIGN] = mxConstants.ALIGN_CENTER;
-	style[mxConstants.STYLE_STROKECOLOR] = '#6482B9';
+	style[mxConstants.STYLE_STROKECOLOR] = '#555555';
 	style[mxConstants.STYLE_FONTCOLOR] = '#446299';
 	
 	return style;
