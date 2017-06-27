@@ -1,7 +1,7 @@
 {
   "name": "Draw in Trello",
-  "description": "",
-  "details": "Draw in Trello Power Up to boost your Trello productivity",
+  "description": "Going back and forth between Trello and a diagram making website is hectic to add a little bit of contextual drawing to a Card. \"Draw in Trello\" brings the ultimate in-app drawing experience for Trello users.",
+  "details": "A lightweight in-app diagram maker for Trello",
   "icon": {
     "url": "./powerup/images/icon.svg"
   },
