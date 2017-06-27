@@ -195,18 +195,25 @@
 	text-decoration:none;
 }
 .geMenubarContainer {
-	background-color:#ffffff;
+	background-color: #0079bf;
 }
 .geMenubar {
 	padding:0px 2px 0px 2px;
 	vertical-align:middle;
 }
+.geMenubarContainer .geItem {
+	padding:6px 8px 6px 8px;
+	cursor:default;
+	color: white;
+}
+
 .geMenubarContainer .geItem, .geToolbar .geItem {
 	padding:6px 8px 6px 8px;
 	cursor:default;
 }
+
 .geMenubarContainer .geItem:hover {
-	background:#eeeeee;
+	background:#298FCA;
 }
 .mxDisabled:hover {
 	background:inherit !important;

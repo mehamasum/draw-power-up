@@ -3209,7 +3209,7 @@ EditorUi.prototype.attachFile = function(forceDialog)
 	}
 	else
 	{
-		var dlg = new FilenameDialog(this, this.editor.getOrCreateFilename(), mxResources.get('save'), mxUtils.bind(this, function(name)
+		var dlg = new FilenameDialog(this, this.editor.getOrCreateFilename(), mxResources.get('attach'), mxUtils.bind(this, function(name)
 		{
 			this.attach(name);
 		}), null, mxUtils.bind(this, function(name)
